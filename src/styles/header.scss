@@ -1,0 +1,64 @@
+.header{
+    background: $bg-col;
+    border-bottom: 1px solid #E5E5E5;
+
+     &__row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     } 
+     &__left{
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+     }
+     &__contacts{
+        text-align: center;
+        border-right: 1px solid #E5E5E5;
+        padding-right: 20px;
+        
+        &-text{
+            @include text(17px, 500, 1.2, $black);
+            margin-top: 6px;
+        }
+        &-link{
+            @include text(18px, 500, 100%, $orangelight);
+            margin-bottom: -5px;
+        }
+        &-time{
+            @include text(14px, 500, 1.1, $grey);
+            
+        }
+        &-row{
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        &-icon{
+           font-size: 15px;
+        }
+     }
+     &__location{
+        display: flex;
+        flex-direction: column;
+        &-text{
+            @include text(14px, 300, 1.1, $grey);
+        }
+        &-city{
+            @include text(18px, 500, 1.1, $black);
+        }
+
+     }
+
+
+
+    
+
+     &__right{
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+     }
+}
