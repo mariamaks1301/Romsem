@@ -108,7 +108,7 @@
           "rating": 7
         }
     ],
-    "sushi": [
+    "rolls": [
       {
         "id": 1,
         "title": "Аригато",
@@ -244,7 +244,372 @@
         "categories": "Теплые ролы",
         "weight": 230
       }
+    ],
+    "sushi": [
+      {
+        "id": 1,
+        "title": "Гункан Икура",
+        "image": "https://102922.selcdn.ru/nomenclature_images_test/2417143/17856764-a90f-4fc5-ac98-17bf1838c9f2.jpg",
+        "price": 180,
+        "ingridients": ["Рис", "Икра", "Нори"],
+        "weight": 55
+      },
+      {
+        "id": 2,
+        "title": "Гункан Краб",
+        "image": "https://102922.selcdn.ru/nomenclature_images_test/2417143/38a4062b-bf9c-4ca8-a533-bd5338f36964.jpg",
+        "price": 150,
+        "ingridients": ["Рис", "Краб", "Нори"],
+        "weight": 55
+      },
+      {
+        "id": 3,
+        "title": "Гункан Спайси",
+        "image": "https://102922.selcdn.ru/nomenclature_images_test/2417143/5b3652a9-8aab-438a-ad38-77c971c9af31.jpg",
+        "price": 180,
+        "ingridients": ["Рис", "лосось", "авокадо", "нори"],
+        "weight": 55
+      },
+      {
+        "id": 4,
+        "title": "Суши Сяки",
+        "image": "https://102922.selcdn.ru/nomenclature_images_test/2417143/889a0058-c494-471e-a942-bf85c54e62f5.jpg",
+        "price": 150,
+        "ingridients": ["Рис", "Лосось","нори"],
+        "weight": 45
+      },
+      {
+        "id": 5,
+        "title": "Суши Тека",
+        "image": "https://102922.selcdn.ru/nomenclature_images_test/2417143/19ca9ec4-e1cc-4e76-88d1-fd7b4a674349.jpg",
+        "price": 100,
+        "ingridients": ["Рис", "Лосось","нори"],
+        "weight": 45
+      },
+      {
+        "id": 6,
+        "title": "Суши Унаги",
+        "image": "https://102922.selcdn.ru/nomenclature_images_test/2417143/07feb566-8fb1-4d68-b924-0e8b74a58e6c.jpg",
+        "price": 150,
+        "ingridients": ["Рис", "угорь","нори", "кунжут"],
+        "weight": 45
+      },
+      {
+        "id": 7,
+        "title": "Суши Эби",
+        "image": "https://102922.selcdn.ru/nomenclature_images_test/2417143/96b84bb9-9c2c-4f7e-81b7-a76ef5d444e0.jpg",
+        "price": 180,
+        "ingridients": ["Рис", "Тигровая креветка","нори"],
+        "weight": 45
+      }
+    
+    ],
+    "sets": [
+      {
+        "id": 1,
+        "title": "4 сезона",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/67-1-e1664221497515.png",
+        "compound": ["Горячий краб", "Горячий лосось", "Горячая креветка", "Горячая курица", "Два вида соуса в каждом ролле"],
+        "price": 1100,
+        "weight": 840,
+        "quantity": 32
+      },
+      {
+        "id": 2,
+        "title": "Запеченный хосомаки",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/zapechennyj-hosomaki.jpg",
+        "compound": ["Ролл лосось", "Ролл краб-2", "Ролл креветка", "Ролл сыр.", "Два вида соуса в каждом ролле"],
+        "price": 750,
+        "weight": 580,
+        "quantity": 30
+      },
+      {
+        "id": 3,
+        "title": "Классика",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/klassika.jpg",
+        "compound": ["Филадельфия", "Канада", "Калифорния","Два вида соуса в каждом ролле"],
+        "price": 1250,
+        "weight": 720,
+        "quantity": 24
+      },
+      {
+        "id": 4,
+        "title": "Романтика",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/romantika.jpg",
+        "compound": ["Филадельфия", "Калифорния", "Ролл краб под сыром", "Хот лосось", "Фудзияма", "Два вида соуса в каждом ролле"],
+        "price": 1300,
+        "weight": 840,
+        "quantity": 30
+      },
+      {
+        "id": 5,
+        "title": "Сет 1",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/53.png",
+        "compound": ["Филадельфия", "БИГ РОЛЛ", "Два вида соуса в каждом ролле"],
+        "price": 670,
+        "weight": 520,
+        "quantity": 16
+      },
+      {
+        "id": 6,
+        "title": "Сет 10",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/62.png",
+        "compound": ["Белая кера", "Филадельфия", "Мини филадельфия", "БИГ РОЛЛ", "Калифорния", "Два вида соуса в каждом ролле"],
+        "price": 1400,
+        "weight": 1170,
+        "quantity": 40
+      },
+      {
+        "id": 7,
+        "title": "Сет 11",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/set-11.jpg",
+        "compound": ["Фила премиум", "Канада премиум", "Фила делюкс", "Два вида соуса в каждом ролле"],
+        "price": 1600,
+        "weight": 770,
+        "quantity": 24
+      },
+      {
+        "id": 8,
+        "title": "Сет 12",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/set-12.jpg",
+        "compound": ["Сяке темпура", "Горячий краб", "Хот мини фила", "Филадельфия", "Нью-Йорк", "Мини Фила", "Два вида соуса в каждом ролле"],
+        "price": 1800,
+        "weight": 1450,
+        "quantity": 48
+      },
+      {
+        "id": 9,
+        "title": "Сет 2",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/set-2.jpg",
+        "compound": ["Горячий краб", "Филадельфия", "Запеченный сыр", "Запеченный краб", "Два вида соуса в каждом ролле"],
+        "price": 900,
+        "weight": 690,
+        "quantity": 28
+      },
+      {
+        "id": 10,
+        "title": "4 сезона",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/67-1-e1664221497515.png",
+        "compound": ["Горячий краб", "Горячий лосось", "Горячая креветка", "Горячая курица", "Два вида соуса в каждом ролле"],
+        "price": 1100,
+        "weight": 840,
+        "quantity": 32
+      },
+      {
+        "id": 11,
+        "title": "Темпура микс",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/tempura-miks.jpg",
+        "compound": ["Сяке темпура", "Унаги темпура", "Кани темпура", "Два вида соуса в каждом ролле"],
+        "price": 1100,
+        "weight": 750,
+        "quantity": 24
+      }
+    ],
+    "soup": [
+      {
+        "id": 1,
+        "title": "Кимчи",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/sun_tubu.png",
+        "ingridients": [],
+        "price": 270
+      },
+      {
+        "id": 2,
+        "title": "Том Ям курица",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/tom-jam-kurica.jpg",
+        "ingridients": ["Курица", "шампиньоны", "рис", "помидоры черри"],
+        "price": 450
+      },
+      {
+        "id": 3,
+        "title": "Том Ям креветка",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/tom-jam-krevetka.jpg",
+        "ingridients": ["Тигровые креветки", "шампиньоны", "рис", "черри"],
+        "price": 550
+      }
+    ],
+    "wok": [
+      {
+        "id": 1,
+        "title": "Соба креветка",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/soba-krevetka.jpg",
+        "ingridients" : ["Гречневая лапша", "тигровые креветки", "паприка", "кабачки", "зелёный лук"],
+        "price": 350
+      },
+      {
+        "id": 2,
+        "title": "Соба курица",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/soba-kurica.jpg",
+        "ingridients": ["Гречневая лапша", "курица", "паприка", "кабачки", "зелёный лук"],
+        "price": 270
+      },
+      {
+        "id": 3,
+        "title": "Соба с говядиной",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/soba-s-govjadinoj.jpg",
+        "ingridients": ["Гречневая лапша", "говядина", "паприка", "кабачки", "зелёный лук"],
+        "price": 290
+      },
+      {
+        "id": 4,
+        "title": "Тяхан рис с говядиной",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/08/05fc71a1-3c4e-470d-aa28-174c9b80ccfc.png",
+        "ingridients": ["Рис", "говядина", "паприка", "кабачки", "зеленый лук"],
+        "price": 290
+      },
+      {
+        "id": 5,
+        "title": "Тяхан рис с креветками",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/08/226b4b31-6d6c-497a-9b77-ab9ddc39a898-1.png",
+        "ingridients": ["Рис", "креветки", "паприка", "кабачки", "зеленый лук"],
+        "price": 350
+      },
+      {
+        "id": 6,
+        "title": "Тяхан рис с курицей",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/08/226b4b31-6d6c-497a-9b77-ab9ddc39a898.png",
+        "ingridients": ["Рис", "курица", "паприка", "кабачки", "зеленый лук"],
+        "price": 270
+      },
+      {
+        "id": 7,
+        "title": "Удон говядина",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/udon-govjadina.jpg",
+        "ingridients": ["Говядина", "пшеничная лапша", "паприка", "кабачки", "зеленый лук"],
+        "price": 290
+      },
+      {
+        "id": 8,
+        "title": "Удон креветка",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/udon-krevetka.jpg",
+        "ingridients": ["Тигровые креветки", "пшеничная лапша", "паприка", "кабачки", "зеленый лук"],
+        "price": 350
+      },
+      {
+        "id": 9,
+        "title": "Удон курица",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/udon-kurica.jpg",
+        "ingridients": ["Курица", "пшеничная лапша", "паприка", "кабачки", "зеленый лук"],
+        "price": 270
+      }
+    ],
+    "salads": [
+      {
+        "id": 1,
+        "title": "Руккола с креветками",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/rukkola-s-krevetkami.jpg",
+        "ingridients": ["Тигровые креветки", "руккола", "помидоры черри"],
+        "price": 460
+      },
+      {
+        "id": 2,
+        "title": "Салат Насу",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/salat-nasu.jpg",
+        "ingridients": ["Баклажаны", "говядина", "помидоры черри", "паприка"],
+        "price": 350
+      },
+      {
+        "id": 3,
+        "title": "Салат с рукколой",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/salat-s-rukkoloj.jpg",
+        "ingridients": ["Руккола", "говядина", "перепелиные яйца", "помидоры черри"],
+        "price": 450
+      },
+      {
+        "id": 4,
+        "title": "Салат Чука",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/salat-chuka.jpg",
+        "ingridients": ["Водоросли чука", "лимон", "ореховый соус"],
+        "price": 200
+      },
+      {
+        "id": 5,
+        "title": "Цезарь курица",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/cezar-s-kuricej.jpg",
+        "ingridients": ["Курица", "айсберг", "соус цезарь", "сухари"],
+        "price": 350
+      },
+      {
+        "id": 6,
+        "title": "Цезарь с креветками",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/cezar-s-krevetkami.jpg",
+        "ingridients": ["Тигровые креветки", "айсберг", "соус цезарь", "сухари"],
+        "price": 450
+      }
+    ],
+    "drinks": [
+      {
+        "id": 1,
+        "title": "Кола 0,5л",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/2265411_1630155383.518_original.jpg",
+        "price": 60
+        
+      },
+      {
+        "id": 2,
+        "title": "Кола 1л",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/2265411_1630155383.518_original.jpg",
+        "price": 100
+
+      },
+      {
+        "id": 3,
+        "title": "Компот 1л",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/de34116f03f5526499389897e850fe0c.jpg",
+        "price": 70
+      },
+      {
+        "id": 4,
+        "title": "Спрайт 0,5л",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/269.970.jpg",
+        "price": 60
+
+      },
+      {
+        "id": 5,
+        "title": "Спрайт 1л",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/sprite-1l.jpg",
+        "price": 100
+
+      },
+      {
+        "id": 6,
+        "title": "Фанта 0,5л",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/20170504.1493898493.sncpsg10.obj_.0.1.jpg.oe_.jpg.pf_.jpg.1350nowm.jpg.1350x-600x600-1.jpg",
+        "price": 60
+
+      },
+      {
+        "id": 7,
+        "title": "Фанта 1л",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/media-share-0-02-05-f2e064c2eabe4f7c927b2a645a7707cb1a6f4616870881094e6be3da4b9967a6-picture.jpg",
+        "price": 100
+
+      }
+  
+    ],
+    "snacks": [
+      {
+        "id": 1,
+        "title": "Фри",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/upakovka-dlya-kartofelya-fri-pure-kraft-_1.jpg",
+        "ingridients": [],
+        "price": 100
+      },
+      {
+        "id": 2,
+        "title": "Клаб курица",
+        "image": "https://wasabi.kg/wp-content/uploads/2022/03/upakovka-dlya-kartofelya-fri-pure-kraft-_1.jpg",
+        "ingridients": ["Курица", "лист салата", "сыр", "помидор"],
+        "price": 220
+      },
+      {
+        "id": 3,
+        "title": "Клаб лосось",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/klab-losos.jpg",
+        "ingridients": ["Лосось", "лист салата", "сыр", "помидор"],
+        "price": 250
+      }
     ]
      
-
 }

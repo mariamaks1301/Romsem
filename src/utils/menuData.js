@@ -28,8 +28,8 @@ export const menuData = [
         ru: 'Супы'
     },
     {
-        en: 'Corn dog',
-        ru: 'Корн доги'
+        en: 'snacks',
+        ru: 'Закуски'
     } ,
     {
         en: 'Drinks',
