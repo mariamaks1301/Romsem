@@ -1,4 +1,4 @@
-export const menuData = [
+const menuData = [
     {
         en: 'Pizza',
         ru: 'Пицца'
@@ -41,3 +41,4 @@ export const menuData = [
     }
     
 ]
+export default menuData

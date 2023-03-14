@@ -5,17 +5,19 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
 import Register from './pages/Register/Register';
+import Delivery from './pages/Delivery/Delivery';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path={''} element={<Layout/>}>
-          <Route path='/home' element={<Home/>}/>
-          <Route path='/register' element={<Register/>}/>
-          <Route path='/login' element={<Login/>}/>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/delivery' element={<Delivery/>}/>
           <Route path='/*' element={<NotFound/>}/>
         </Route>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
   
     </div>

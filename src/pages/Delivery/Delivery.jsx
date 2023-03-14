@@ -3,6 +3,9 @@ import React from 'react';
 const Delivery = () => {
     return (
         <div>
+            <div className="container">
+                Delivery
+            </div>
             
         </div>
     );

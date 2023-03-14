@@ -1,0 +1,47 @@
+.menu{
+    background: #fff;
+    padding: 20px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+  
+   &__list{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    align-items: center;
+
+   }
+   &__item{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    transition: .3s all linear;
+
+    &:hover{
+        transition: .3s all linear;
+        border: 3px solid $orangelight;
+        &-link{
+            
+        }
+    }
+   
+    &-img{
+        width: 100px;
+        max-height: 0;       
+    }
+        
+   }
+}
+
+.menu__list:hover .menu__item-img{
+    height: 80px;
+    max-height: 100px;
+    transition: .3s all linear;
+}
+.menu__item:hover .menu__item-link{
+    @include text(17px, 500, 1.2, $orangelight);
+}

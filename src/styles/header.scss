@@ -1,11 +1,15 @@
 .header{
     background: $bg-col;
     border-bottom: 1px solid #E5E5E5;
+    position: relative;
+
+  
 
      &__row{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
      } 
      &__left{
         display: flex;
@@ -60,5 +64,32 @@
         display: flex;
         align-items: center;
         column-gap: 20px;
+        &-link{
+            &-reviews{
+                @include text(18px, 500, 100%, $black);
+            }
+            &-delivery{
+                @include text(18px, 500, 100%, $orangelight);
+            }
+        }
+     }
+     &__basket{
+        &-icon{
+            svg{
+                fill: $orangelight;
+            }
+        }
+     }
+
+     &__account{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-icon{
+            font-size: 35px;
+            margin-bottom: -10px;
+           
+        }
      }
 }

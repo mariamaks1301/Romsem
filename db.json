@@ -6,6 +6,59 @@
             "id": 1
           }
     ],
+    "menu": [
+      {
+        "id": 1,
+        "title": "Пицца",
+        "image": "https://yan-pizza.ru/wp-content/uploads/2020/08/pochemu-nasha-piczcza-luchshaya.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Сеты",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/09/klassika.jpg"
+      },
+      {
+        "id": 3,
+        "title": "WOK",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/soba-krevetka.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Роллы",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/sjake-tempura.jpg"
+
+      },
+      {
+        "id": 5,
+        "title": "Суши",
+        "image": "https://www.nippon.com/ru/ncommon/contents/japan-data/168678/168678.jpg"
+
+      },
+      {
+        "id": 6,
+        "title": "Салаты",
+        "image": "https://img.freepik.com/premium-photo/vegetarian-salad-with-mix-leaves-mangold-swiss-chard-spinach-arugula-and-nuts-in-a-salad-bowl-black-background-top-view-copy-space_89816-27302.jpg"
+
+      },
+      {
+        "id": 7,
+        "title": "Супы",
+        "image": "https://www.maggi.ru/data/images/recept/img564x436/recept_8567_gmag.jpg"
+
+      },
+      {
+        "id": 8,
+        "title": "Закуски",
+        "image": "https://wasabi.kg/wp-content/uploads/2021/07/klab-losos.jpg"
+
+      },
+      {
+        "id": 9,
+        "title": "Напитки",
+        "image": "https://edaprof.ru/image/catalog/aromatizatori/koka-kola-zhidkiy/aromatizator-pishchevoy-koka-kola-zhidkiy-5.jpg"
+      
+      }    
+    ],
     "pizza": [
       {
           "id": 0,

@@ -1,18 +1,18 @@
 import React from 'react';
-// import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo.png';
 import {HiShoppingCart} from 'react-icons/hi';
 import {BsSearch, BsClock} from 'react-icons/bs';
 import {VscAccount} from 'react-icons/vsc';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
+
     return (
         <section className='header'>
-            <div className="container">
+            <div className="wrapper">
                 <div className="header__row">
                     <div className='header__left'>
-                        {/* <h1 className='header__logo'>
-                            <img className='header__logo-img' src={Logo} alt="Romsem logo" />
-                        </h1> */}
+                        
                         <div className="header__contacts">
                             <p className='header__contacts-text'>Наш телефон</p>
                             <a className='header__contacts-link' href="tel:+996 705 188 955">+996 705 188 955</a> <br />
@@ -30,17 +30,17 @@ const Header = () => {
                         </div>
                     </div>
                     <div className='header__right'>
-                        <p>Отзывы</p>
-                        <p>Доставка и оплата</p>
+                        <Link className='header__right-link-reviews' to={'/reviews'}>Отзывы</Link>
+                        <Link className='header__right-link-delivery' to={'/delivery'}>Доставка и оплата</Link>
 
                         <div className="header__search">
                             <span>
-                                <BsSearch/>
+                                <BsSearch style={{fontSize: '20px'}}/>
                             </span>
                         </div>
                         <div className='header__basket'>
                             <span className='header__basket-icon'>
-                                <HiShoppingCart/>
+                                <HiShoppingCart style={{fontSize: '32px'}}/>
                             </span>
                         </div>
                         <div className='header__account'>
@@ -51,9 +51,8 @@ const Header = () => {
                         </div>
 
                     </div>
-                </div>
-                
-            </div> 
+                </div> 
+            </div>        
         </section>
     );
 };

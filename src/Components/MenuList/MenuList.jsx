@@ -1,21 +1,62 @@
 import React from 'react';
-import menuData from "../../utils/menuData";
+import { useNavigate, Link } from 'react-router-dom';
+
+
+
 
 
 const MenuList = () => {
     const navigate = useNavigate();
 
     return (
-        <aside className='menu__list'>
-            {
-                menuData.map((item)=>(
-                    <li key={item.en} className='menu__item' onClick={()=> navigate(`/cotalog/${item.en}`)}>
-                        {item.ru}
+        <div className='menu'>
+            <div className="menu__content">
+                <ul className='menu__list'>
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="https://wasabi.kg/wp-content/uploads/2021/09/klassika.jpg" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
                     </li>
-                ))
-            }
-            
-        </aside>
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
+                    </li> 
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
+                    </li> 
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
+                    </li> 
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
+                    </li> 
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
+                    </li> 
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
+                    </li> 
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
+                    </li> 
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
+                    </li> 
+                    <li className='menu__item'>
+                        <img className='menu__item-img' src="" alt="" />
+                        <Link className='menu__item-link'>Пицца</Link>
+                    </li> 
+                   
+
+                </ul>               
+             </div>           
+        </div>
     );
 };
 
