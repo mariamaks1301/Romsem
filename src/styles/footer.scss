@@ -1,0 +1,76 @@
+.footer{
+    border-top: 1px solid $grey;
+    &__row{   
+        margin-top: 20px;
+        display: flex;
+    }
+    &__column{
+        width: 33.33333%;
+        padding: 0 41px 60px 41px;
+        &-2{
+            border-right: .5px solid $grey;
+            border-left: .5px solid $grey;
+
+        }
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+            &-address{
+                display: flex;
+                flex-direction: column;
+            }
+    }
+    &__item-address-text{
+        @include text(18px, 400, 1.2, $grey);
+    }
+    &__link{
+        @include text(18px, 400, 1.2, #000000);
+        &-tel{
+            @include text(18px, 400, 1.2, $grey);
+        }
+
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        &-title{
+            @include text(18px, 400, 1.2, #000000);
+
+        }
+        &-text{
+            @include text(18px, 400, 1.2, $grey);
+        }
+        
+    }
+    &__social{
+        padding: 20px 0;
+        &-list{
+            display: flex;
+            justify-content: center;
+            column-gap: 30px;
+            align-items: center;
+
+        }
+        // &-item{
+
+        // }
+        // &-link{
+
+        // }
+        &-icon{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: none;
+            background: $orangelight;
+
+        }
+
+
+            
+    }
+
+}

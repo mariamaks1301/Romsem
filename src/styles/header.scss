@@ -1,7 +1,21 @@
 .header{
-    background: $bg-col;
-    border-bottom: 1px solid #E5E5E5;
+    background: #fff;
     position: relative;
+
+    &__logo{
+        width: 101px;
+        height: 86px;
+        position: relative;
+        &-name{
+            position: absolute;
+            top: -9px;
+            left: 0;
+            text-transform: uppercase;
+        }
+        &-img{
+            width: 100%;
+        }
+    }
 
   
 
@@ -9,6 +23,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-bottom: 1px solid #E5E5E5;
         
      } 
      &__left{

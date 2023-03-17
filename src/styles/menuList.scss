@@ -24,14 +24,18 @@
     &:hover{
         transition: .3s all linear;
         border: 3px solid $orangelight;
-        &-link{
-            
-        }
+       
+    }
+    &-link{
+        padding: 5px 0;
     }
    
     &-img{
         width: 100px;
-        max-height: 0;       
+        max-height: 0; 
+        border-top-right-radius: 8px;  
+        border-top-left-radius: 8px;      
+
     }
         
    }

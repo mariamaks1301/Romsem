@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cotalog = () => {
+const Catalog = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Cotalog = () => {
     );
 };
 
-export default Cotalog;
+export default Catalog;

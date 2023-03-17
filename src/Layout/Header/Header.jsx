@@ -12,6 +12,13 @@ const Header = () => {
             <div className="wrapper">
                 <div className="header__row">
                     <div className='header__left'>
+                        <div>
+                            <h1 className='header__logo'>
+                                <span className='header__logo-name'>Romsem</span>
+                                <img className='header__logo-img' src={Logo} alt="RomSem Logo" />
+                            </h1>
+
+                        </div>
                         
                         <div className="header__contacts">
                             <p className='header__contacts-text'>Наш телефон</p>

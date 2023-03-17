@@ -1,58 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import axios from '../../utils/axios';
 
 
 
 
 
 const MenuList = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+
+    const [menu, setMenu] = useState([]);
+
+    useEffect(()=>{
+        axios(`/menu`)
+        .then(({data})=> {setMenu(data)})
+        .catch((err)=>console.log(err))
+        console.log(menu)
+    },[])
 
     return (
         <div className='menu'>
             <div className="menu__content">
                 <ul className='menu__list'>
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="https://wasabi.kg/wp-content/uploads/2021/09/klassika.jpg" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li>
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li> 
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li> 
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li> 
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li> 
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li> 
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li> 
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li> 
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li> 
-                    <li className='menu__item'>
-                        <img className='menu__item-img' src="" alt="" />
-                        <Link className='menu__item-link'>Пицца</Link>
-                    </li> 
-                   
+                    {
+                        menu.map((item)=>(
+                            <li key={item.id} className='menu__item'>
+                                <img className='menu__item-img' src={item.image} alt={item.title} />
+                                <Link className='menu__item-link'>{item.title}</Link>
+                             </li>
+                        ))
+                    }
 
                 </ul>               
              </div>           

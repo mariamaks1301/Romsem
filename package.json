@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.5",
     "react-icons": "^4.8.0",
+    "react-input-mask": "^2.0.4",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
@@ -24,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "json-server-auth --watch db.json --port8000",
+    "server": "json-server --watch db.json --port 3004",
     "dev": "concurrently \"npm run start\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",

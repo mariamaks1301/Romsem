@@ -1,11 +1,13 @@
 import React from 'react';
 import MenuList from '../../Components/MenuList/MenuList';
+import Info from './Info/Info';
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Autoplay } from "swiper";
 import "swiper/css";
-import "swiper/css/pagination";
-// import "./styles.css";
+import AboutMenu from './AboutMenu/AboutMenu';
+
+
 
 
 const Home = () => {
@@ -22,17 +24,18 @@ const Home = () => {
                         <>
                             <Swiper
                                 spaceBetween={30}
-                                pagination={{
-                                clickable: true,
+                                loop={true}
+                                autoplay={{
+                                    delay: 3000
                                 }}
-                                modules={[Pagination]}
+                                speed={1000}
+                                modules={[Autoplay]}
                                 className="mySwiper"
                             >
                                 <SwiperSlide>
-                                    <div className="slider__card slider__card-row">
-                                        <h2>Новое меню</h2>
-                                        <h3>+ бесплатная доставка</h3>
-                                        <img className='slider__card-img' src="https://wasabi.kg/wp-content/uploads/2021/07/rukkola-s-krevetkami.jpg" alt="" />
+                                    <div className="slider__card">
+                                        
+                                        <img className='slider__card-img slider__card-img-half' src="https://wasabi.kg/wp-content/uploads/2021/09/title-page-e1632388803700.png" alt="" />
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -45,6 +48,8 @@ const Home = () => {
                         </>
 
                     </div>
+                    <AboutMenu/>
+                    <Info/>
                 </div>
                 
             </div>

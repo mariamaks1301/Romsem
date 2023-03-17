@@ -1,6 +1,7 @@
 .home{
     width: 100%;
     background: $bg-col;
+    min-height: 150vh;
     position: relative;
 
     &__content{
@@ -16,10 +17,18 @@
 .slider__card{
     margin-top: 50px;
     width: 1210px;
-    height: 350px;
+    height: 400px;
+    &-row{
+        display: flex;
+    }
+    &-img{
+        &-half{
+            width: 60%;
+        }
+    }
 }
 .slider__card-img{
     width: 1210px;
-    height: 450px;
+    height: 350px;
 
 }
