@@ -3,10 +3,11 @@ import Form from '../../Components/Form/Form';
 
 const Register = () => {
     return (
-        <div>
-            <div className="container">
-                <Form/>
-            </div>
+        <div className='register'>
+                <div className="container">
+                     <Form/> 
+                </div>
+           
         </div>
     );
 };

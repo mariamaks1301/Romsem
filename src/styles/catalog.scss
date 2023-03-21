@@ -1,0 +1,25 @@
+.catalog{
+    padding: 50px 0;
+    background: $bg-col;
+    &__content{
+        width: 100%;
+        display: flex;
+        column-gap: 20px;
+    }
+    &__aside{
+        width: 250px;
+        background: grey;
+        min-height: 100vh;
+        border-radius: 8px;
+    }
+    &__row{
+        width: calc(100% - 270px);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    &__title{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

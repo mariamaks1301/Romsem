@@ -1,10 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import InputMask from 'react-input-mask';
+import { CustomContext } from '../../utils/Context';
+import axios from '../../utils/axios';
+
+
 
 
 const Form = () => {
+
+    const { setUser } = useContext(CustomContext);
+    const navigate = useNavigate();
+
+
 
     const {
         register,
@@ -15,24 +24,55 @@ const Form = () => {
         mode: "onBlur"
       });
     
+      const registerUser = ()=>{
 
-    const registerUser = (e)=>{
-        e.preventDefault()
-        
-        // let newUser = {
-        //     login,
-        //     email,
-        //     phone,
-        //     password: e.target[3].value,
-        // }
-        
+        let newUser = {
+            email: getValues('email'),
+            password: getValues('password'),
+            login: getValues('login'),
+            phone: getValues('phone')
+        }
 
-    }
+        axios.post('/register', newUser)
+            .then(({data}) => {
+                setUser({
+                    token: data.accessToken,
+                    ...data.user
+                })
+                 localStorage.setItem('user', JSON.stringify({
+                     token: data.accessToken,
+                     ...data.user
+                 }))
+                navigate('/');
+            })
+            .catch((err) => console.log(err.message))
+
+      }
+   
 
     return (
         <div className='content'>
             <form noValidate className='form' onSubmit={handleSubmit(registerUser)}>
-                <h2 className='form__title'>Регистрация</h2>
+                <h2 className='form__title'>Регистрация на ROMSEM</h2>
+
+                <label   className='form__label'>
+                    <input  {...register( 'email', {
+                        required: {
+                            message: "Поле email, обязательно к заполнению",
+                            value: true
+                        },
+                        pattern: {
+                            message: 'Введите email верно',
+                            value: /^[^ ]+@[^ ]+\.[a-z]{2,5}$/,
+                        },
+
+                    })} className='form__field' type="email" placeholder='Введите Email' />
+                    <p className='form__error'>{errors.email && errors.email.message}</p>
+                </label>
+
+                
+
+                
 
                 <label  className='form__label'>
                     <input {...register('login', {
@@ -51,26 +91,9 @@ const Form = () => {
                     })} className='form__field'  type="text" placeholder='Введите логин' />
                     <p className='form__error'>{errors.login && errors.login.message}</p>
                 </label>
-                
-
-
-                <label  className='form__label'>
-                    <input {...register( 'email', {
-                        required: {
-                            message: "Поле email, обязательно к заполнению",
-                            value: true
-                        },
-                        pattern: {
-                            message: 'Введите email верно',
-                            value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-                        },
-
-                    })} className='form__field' type="email" placeholder='Введите Email' />
-                    <p className='form__error'>{errors.email && errors.email.message}</p>
-                </label>
 
                 <label className='form__label'>
-                    <InputMask
+                    <InputMask 
                         mask={`+\\9\\96(999)99-99-99`}
                         type='tel'
                         {...register('phone', {
@@ -84,7 +107,7 @@ const Form = () => {
                             },
                         })}
                         className='form__field'
-                        placeholder={'Введите номер телефона'}
+                        placeholder={'+996 (555) 55-55-55'}
                     />
                     <p className='form__error'>{errors.phone && errors.phone.message}</p>
                 </label>
@@ -126,11 +149,12 @@ const Form = () => {
                     <p className='form__error'>{errors.passwordAgain && errors.passwordAgain.message}</p>
                 </label>
 
+
                 <button className='form__btn' type='submit'>Зарегестрироваться</button>
 
 
                 <p className='form__text'>У меня уже есть
-                    <Link className='form__text-link' to="/login"> аккаунт</Link>
+                    <Link to="/login" className='form__text-link' > аккаунт</Link>
                 </p>
 
 

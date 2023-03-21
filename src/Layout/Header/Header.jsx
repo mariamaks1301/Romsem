@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Logo from '../../assets/logo.png';
 import {HiShoppingCart} from 'react-icons/hi';
 import {BsSearch, BsClock} from 'react-icons/bs';
 import {VscAccount} from 'react-icons/vsc';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { CustomContext } from '../../utils/Context';
 
 const Header = () => {
+
+    const navigate = useNavigate();
+    const {user, setUser} = useContext(CustomContext);
+
+    const logOutUser = ()=>{
+        setUser({
+            email: ''
+        })
+        localStorage.removeItem('user')
+        navigate('/login')
+    }
+
 
     return (
         <section className='header'>
@@ -13,7 +26,7 @@ const Header = () => {
                 <div className="header__row">
                     <div className='header__left'>
                         <div>
-                            <h1 className='header__logo'>
+                            <h1 className='header__logo' onClick={()=> navigate('/')}>
                                 <span className='header__logo-name'>Romsem</span>
                                 <img className='header__logo-img' src={Logo} alt="RomSem Logo" />
                             </h1>
@@ -54,7 +67,13 @@ const Header = () => {
                             <span className='header__account-icon'>
                                 <VscAccount/>
                             </span>
-                            <span className='header__account-text'>Войти</span>
+                            {
+                                user.email.length ? <span className='header__account-text' onClick={logOutUser}>Выйти</span> 
+                                :
+                                <Link className='header__account-text' to='/register'>
+                                    <span>Войти</span>
+                                </Link>
+                            }
                         </div>
 
                     </div>

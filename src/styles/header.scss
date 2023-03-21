@@ -3,17 +3,19 @@
     position: relative;
 
     &__logo{
-        width: 101px;
+        width: 100px;
         height: 86px;
         position: relative;
+        top: 18px;
         &-name{
             position: absolute;
-            top: -9px;
-            left: 0;
+            top: -30px;
+            left: -8px;
             text-transform: uppercase;
         }
         &-img{
-            width: 100%;
+            width: 75px;
+            height: 75px;
         }
     }
 
