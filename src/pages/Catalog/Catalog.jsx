@@ -23,7 +23,7 @@ const Catalog = () => {
                         {
                             products.map(item => (
                                 <div key={item.id} className="card">
-                                    <div className='card__block-img' onClick={()=> navigate('/product/${item.id}')}>
+                                    <div className='card__block-img' onClick={()=> navigate(`/product/${item.id}`)}>
                                         <img className='card__img' src={item.image} alt={item.title} />
                                     </div>
                                     <div className='card__block-info'>

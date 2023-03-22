@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from '../../../utils/axios';
+// import axios from '../../../utils/axios';
 import Pizza from '../../../assets/aboutMenu/pizza.png';
 import Chicken from '../../../assets/aboutMenu/chicken.png';
 import Ell from '../../../assets/aboutMenu/eel.png';
@@ -14,14 +14,14 @@ import Salads from '../../../assets/aboutMenu/salads.png';
 
 const AboutMenu = () => {
 
-    const [aboutMenu, setAboutMenu] = useState([]);
+    // const [aboutMenu, setAboutMenu] = useState([]);
 
-    useEffect(()=>{
-        axios('/aboutmenu')
-        .then(({data})=> {setAboutMenu(data)})
-        .catch((err)=> console.log(err.message))
+    // useEffect(()=>{
+    //     axios('/aboutmenu')
+    //     .then(({data})=> {setAboutMenu(data)})
+    //     .catch((err)=> console.log(err.message))
         
-    }, [])
+    // }, [])
     
     return (
         <div className='aboutMenu'>
