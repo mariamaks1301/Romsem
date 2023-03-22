@@ -8,6 +8,7 @@ import Delivery from './pages/Delivery/Delivery';
 import Catalog from './pages/Catalog/Catalog';
 import Product from './pages/Product/Product';
 import '../src/styles/style.scss';
+import Basket from './pages/Basket/Basket';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/delivery" element={<Delivery/>}/>
           <Route path="/catalog" element={<Catalog/>}/>
           <Route path="/product/:id" element={<Product/>}/>
+          <Route path="/basket" element={<Basket/>}/>
           <Route path='/*' element={<NotFound/>}/>
         </Route>
         <Route path='/login' element={<Login/>}/>

@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import InputMask from 'react-input-mask';
+import {BsInstagram} from 'react-icons/bs';
+import {ImWhatsapp} from 'react-icons/im';
+import {FaTelegramPlane} from 'react-icons/fa';
+
+
+
 
 const Footer = () => {
     return (
@@ -27,13 +33,15 @@ const Footer = () => {
                     <div className="footer__column footer__column-2">
                         <form className='footer__form' action="">
                             <h2 className='footer__form-title'>Введите номер</h2>
-                            
+                            <p className='footer__form-text'>И мы Вам перезвоним</p>
+                                                
                             <InputMask
-                            placeholder='+996 (555) 55-55-55'
+                            placeholder='+996 (___) __-__-__'
                             className='footer__form-field'
                             mask={`+\\9\\96(999)99-99-99`}
                             type='tel'
                             />
+                            
                             
                             <p className='footer__form-text'>
                                 Выберите удобный <br /> 
@@ -43,17 +51,23 @@ const Footer = () => {
                                 <ul className='footer__social-list'>
                                     <li className='footer__social-item'>
                                         <a className='footer__social-link' href="">
-                                            <span className='footer__social-icon'></span>
+                                            <p className='footer__social-icon footer__social-icon-whatsup'>
+                                                <span><ImWhatsapp fill='white' fontSize={'25px'} /></span>
+                                            </p>
                                         </a>
                                     </li>
                                     <li className='footer__social-item'>
                                         <a className='footer__social-link' href="">
-                                            <span className='footer__social-icon'></span>
+                                            <p className='footer__social-icon footer__social-icon-telegram'>
+                                                <span><FaTelegramPlane fill='white' fontSize={'25px'}/></span>
+                                            </p>
                                         </a>
                                     </li>
                                     <li className='footer__social-item'>
                                         <a className='footer__social-link' href="">
-                                            <span className='footer__social-icon'></span>
+                                            <p className='footer__social-icon footer__social-icon-instagram'>
+                                                <span><BsInstagram fill='white' fontSize={'25px'} paddingTop={'100%'}/></span>
+                                            </p>
                                         </a>
                                     </li>
                                 </ul>

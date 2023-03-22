@@ -5,13 +5,19 @@ export const CustomContext = createContext();
 
 export const Context = (props) =>{
 
+    const [products, setProducts] = useState([]);
+    const [basket, setBasket] = useState([]);
     const [user, setUser] = useState({
         email: ''
    })
 
     const value = {
         user,
-        setUser
+        setUser,
+        products,
+        setProducts,
+        basket,
+        setBasket
 
 
     }

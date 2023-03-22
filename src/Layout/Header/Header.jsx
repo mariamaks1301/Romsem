@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Logo from '../../assets/logo.png';
 import {HiShoppingCart} from 'react-icons/hi';
 import {BsSearch, BsClock} from 'react-icons/bs';
 import {VscAccount} from 'react-icons/vsc';
 import { Link, useNavigate } from 'react-router-dom';
 import { CustomContext } from '../../utils/Context';
+import BasketZero from '../../Components/BasketZero/BasketZero';
 
 const Header = () => {
 
     const navigate = useNavigate();
-    const {user, setUser} = useContext(CustomContext);
+    const {user, setUser, basket, setBasket } = useContext(CustomContext);
+    const [show, setShow] = useState(false);
 
     const logOutUser = ()=>{
         setUser({
@@ -58,11 +60,24 @@ const Header = () => {
                                 <BsSearch style={{fontSize: '20px'}}/>
                             </span>
                         </div>
-                        <div className='header__basket'>
+
+                        
+
+                        <div onClick={()=> 
+                             {
+                                if(basket.length){
+                                  navigate('/basket')
+                                }else{
+                                    setShow(true)
+                                }
+                               
+                             }
+                        } className='header__basket '>
                             <span className='header__basket-icon'>
-                                <HiShoppingCart style={{fontSize: '32px'}}/>
-                            </span>
+                                        <HiShoppingCart style={{fontSize: '32px'}}/>
+                                    </span> 
                         </div>
+
                         <div className='header__account'>
                             <span className='header__account-icon'>
                                 <VscAccount/>
@@ -78,7 +93,8 @@ const Header = () => {
 
                     </div>
                 </div> 
-            </div>        
+            </div>  
+            <BasketZero show={show} setShow={setShow}/>      
         </section>
     );
 };

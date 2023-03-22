@@ -22,8 +22,9 @@ const Recommend = () => {
         <div className='recommend'>
             <div className="recommend-sliders">
                 <Swiper
-                    slidesPerView={4.5}
-                    spaceBetween={20}
+                   
+                    slidesPerView={4}
+                    spaceBetween={30}
                     freeMode={true}
                     loop={true}
                     autoplay={{
@@ -37,14 +38,16 @@ const Recommend = () => {
                         {
                             products.map((item)=>(
                                 <SwiperSlide key={item.id} >
-                                    <div  className="recommend__card">
+                                    <div  className="recommend__card" onClick={()=> navigate(`/product/${item.id}`)}>
                                         <div className='recommend__card-block-img'>
                                             <img src={item.image} alt={item.title}  className="recommend__card-img"/>
                                         </div>
                                         <div className="recommend__card-info">
-                                            <div className="recommend__card-row">
                                                 <h3 className="recommend__card-title">{item.title}</h3>
+                                            <div className="recommend__card-row">
                                                 <p className="recommend__card-weight">Вес: {item.weight} г</p>
+                                                <p className="recommend__card-weight">Цена: {item.price} Сом</p>
+
                                             </div>
                                             
                                         </div>

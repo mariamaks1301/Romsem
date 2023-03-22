@@ -49,6 +49,20 @@ $bg-col: #F2F2F2;
     line-height: $lh;
     color: $col;
 }
+
+.btn{
+    width: 200px;
+    height: 40px;
+    @include text(20px, 600, 1.1, #fff);
+    border: none;
+    border-radius: 6px;
+    background: $orangelight;
+    transition: .3s all linear;
+    cursor: pointer;
+        &:hover{
+            background: $orange;
+        }
+}
   
 @import 'header';
 @import 'menuList';
@@ -57,16 +71,11 @@ $bg-col: #F2F2F2;
 @import 'aboutMenu';
 @import 'form';
 @import 'catalog';
-
+@import 'basket';
+@import 'basketZero';
 @import 'card';
 @import 'product';
 @import 'recommend';
-
-
-
-
-
-
 @import 'footer';
 
 

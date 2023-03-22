@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from '../../utils/axios';
 import { useNavigate } from 'react-router-dom';
+import { CustomContext } from '../../utils/Context';
 
 
 const Catalog = () => {
-    const [products,  setProducts] = useState([]);
-    const navigate = useNavigate();
 
-    useEffect(()=>{
-        axios('/products')
+    const navigate = useNavigate();
+    const {products, setProducts} = useContext(CustomContext);
+
+    useEffect(()=>{   
+        axios(`/products`)
         .then(({data})=> setProducts(data))
         .catch((err)=> console.log(err.message))
     }, [])
+
     return (
         <section className='catalog'>
             <div className="container">

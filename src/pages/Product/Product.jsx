@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import {HiOutlineChevronLeft} from 'react-icons/hi';
 import Recommend from '../../Components/Recommend/Recommend';
+import {HiShoppingCart} from 'react-icons/hi';
+
 
 const Product = () => {
     const [product, setProduct] = useState({});
@@ -51,7 +53,7 @@ const Product = () => {
                                 <p className="product__btns-count">
                                     <button className='product__btn-count product__btn-count-decrease' type='button' onClick={()=> setProductCount((prev) => prev - 1)}>-</button>
                                     <span className='product__count'>{productCount}</span>
-                                    <button className='product__btn-count product__btn-count-increase' type='button' onClick={()=> setProductCount((prev) => prev + 1)}>+</button>
+                                    <button className='product__btn-count product__btn-count-increase' type='button' onClick={()=> setProductCount((prev) => prev + 1)}> + </button>
                                 </p>
                             </div>
                             <p className="product__description">
@@ -59,7 +61,12 @@ const Product = () => {
                                 {product.ingridients}
                             </p>
 
-                            <button type='button' className='product__btn'>Хочу !</button>
+                            <button type='button' className='product__btn'>
+                                <span>Хочу !</span>
+                                <span>
+                                    <HiShoppingCart fill='white' fontSize={'22px'}/>
+                                </span>
+                            </button>
                         
                         
 

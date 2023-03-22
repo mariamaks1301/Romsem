@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuList from '../../Components/MenuList/MenuList';
+import Recommend from '../../Components/Recommend/Recommend';
 import Info from './Info/Info';
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import "swiper/css";
@@ -10,13 +10,13 @@ import AboutMenu from './AboutMenu/AboutMenu';
 
 
 
+
 const Home = () => {
     return (
         <section className='home'>
             
-                <MenuList/>
-          
-            
+            <MenuList/>
+
             <div className="container">
                 <div className="home__content">
                     <div className="home__swiper">
@@ -49,10 +49,13 @@ const Home = () => {
 
                     </div>
                     <AboutMenu/>
+                    <Recommend/>
                     <Info/>
                 </div>
                 
             </div>
+
+            
         </section>
     );
 };
