@@ -1,0 +1,25 @@
+.adminPanel{
+    padding: 30px 0;
+    background: url(../assets/loging-bg.jpg) center/cover no-repeat;
+    height: 200vh;
+    width: 100%;
+
+    &__block-switcher{
+        display: flex;
+        justify-content: center;
+        column-gap: 30px;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+   
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.addProduct{
+    display: flex;
+    justify-content: center;
+}

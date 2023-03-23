@@ -33,7 +33,7 @@ const Form = () => {
             phone: getValues('phone')
         }
 
-        axios.post('/register', newUser)
+        axios.post('/users', newUser)
             .then(({data}) => {
                 setUser({
                     token: data.accessToken,

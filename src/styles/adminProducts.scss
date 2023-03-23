@@ -1,0 +1,22 @@
+.adminProducts{
+    background: $bg-col;
+
+    &__item{
+        border: 1px solid black;
+        margin-bottom: 10px;
+    
+
+        &-row{
+            display: flex;
+            flex-wrap: wrap;
+     
+        }
+        &-info{
+            padding: 20px;
+        }
+        &-img{
+            width: 200px;
+            height: 200px;
+        }
+    }
+}

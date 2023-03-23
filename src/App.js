@@ -9,6 +9,7 @@ import Catalog from './pages/Catalog/Catalog';
 import Product from './pages/Product/Product';
 import '../src/styles/style.scss';
 import Basket from './pages/Basket/Basket';
+import AdminPanel from './pages/AdminPanel/AdminPanel';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           <Route path="/basket" element={<Basket/>}/>
           <Route path='/*' element={<NotFound/>}/>
         </Route>
+
+        <Route path='/adminpanel' element={<AdminPanel/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
       </Routes>
