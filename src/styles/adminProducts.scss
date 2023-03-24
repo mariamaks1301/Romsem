@@ -1,22 +1,91 @@
 .adminProducts{
-    background: $bg-col;
+    background: transparent;
+    &__select{
+        width: 100px;
+        height: 25px;
+        margin-bottom: 10px;
+    }
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    &__btns{
+        display: flex;
+        column-gap: 20px;
+        width: 16%;
+        padding: 20px;
+        
+    }
 
     &__item{
         border: 1px solid black;
+        border-radius: 8px;
         margin-bottom: 10px;
+        background-color: $bg-col;
+
+        &-title{
+            &-field{
+                width: 100%;
+                margin-bottom: 5px;
+                padding: 0 10px;
+            }
+        }
+        &-price{
+            &-field{
+                width: 150px;
+                margin-bottom: 5px;
+                padding: 0 10px;
+            }
+        }
+        &-ingridints{
+            &-field{
+                width: 100%;
+                margin-bottom: 5px;
+                padding: 0 10px;
+            }
+        }
+        &-compound{
+            &-field{
+                width: 100%;
+                margin-bottom: 5px;
+                padding: 0 10px;
+            }
+        }
+
+        
+
+        &-info{
+            width: 59%;
+            padding: 20px;
+        }
     
 
         &-row{
-            display: flex;
+            display: flex;         
             flex-wrap: wrap;
      
         }
-        &-info{
-            padding: 20px;
-        }
+       
         &-img{
-            width: 200px;
-            height: 200px;
+            width: 25%;
+            min-height: 200px;
+            min-width: 200px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+
+        }
+        &-btn{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            background: $orangelight;
+            &:hover{
+            background: $orange;
+
+            }
         }
     }
 }

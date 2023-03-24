@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import AdminUsers from './AdminUsers/AdminUsers';
 import AdminProducts from './AdminProducs/AdminProducts';
-import AdminAddProduct from './AdminProducs/AdminAddProduct';
+
 
 
 const AdminPanel = () => {
 
-    // const [status, setStatus] = useState('users');
+     const [status, setStatus] = useState(false);
     
-
-
     return (
         <div className='adminPanel'>
             <div className="container">
                 <div className='adminPanel__block-switcher'>
-                    <button  className='adminPanel__switcher btn' type='button'>Users</button>
-                    <button  className='adminPanel__switcher btn' type='button'>Products</button>
-                    <button  className='adminPanel__switcher btn' type='button'>Add Product</button>
+                    <button onClick={()=> setStatus(true)}  className='adminPanel__switcher btn' type='button'>Users</button>
+                    <button onClick={()=> setStatus(false)} className='adminPanel__switcher btn' type='button'>Products</button>   
                 </div>
 
-                    <AdminUsers/> 
-                    <AdminAddProduct/>
-                    <AdminProducts/> 
+                    {
+                        status ? <AdminUsers/> :  <AdminProducts/>
+                    }
+
+                    
+                    
+                    
                 
 
                 

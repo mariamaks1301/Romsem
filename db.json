@@ -571,17 +571,6 @@
       "category": "sets"
     },
     {
-      "id": 41,
-      "title": "4 сезона",
-      "name": "",
-      "image": "https://wasabi.kg/wp-content/uploads/2021/09/67-1-e1664221497515.png",
-      "compound": "Горячий краб, Горячий лосось, Горячая креветка, Горячая курица, Два вида соуса в каждом ролле",
-      "price": 1100,
-      "weight": 840,
-      "quantity": 32,
-      "category": "sets"
-    },
-    {
       "id": 43,
       "title": "Темпура микс",
       "name": "",
@@ -865,29 +854,42 @@
     },
     {
       "category": "rolls",
-      "title": "Торт",
+      "title": "шеф-ролл в кунжуте",
       "categories": "Холодные ролы",
-      "name": "cake",
-      "image": "https://wasabi.kg/wp-content/uploads/2021/09/tort.jpg",
-      "price": "2500",
-      "weight": "1750",
-      "quantity": "68",
-      "ingridients": "",
-      "compound": "Филадельфия 16 штук, Калифорния, Белая кера, Нью-Йорк, Мини филадельфия, Ролл огурец, Ролл лосось, Ролл пирамида.",
+      "name": "chef-roll-in-sesame",
+      "image": "https://wasabi.kg/wp-content/uploads/2021/07/zheneva.jpg",
+      "price": "320",
+      "weight": "230",
+      "quantity": "6",
+      "ingridients": "Лосось, тигровые креветки, авокадо, сыр",
+      "compound": "",
       "id": 74
     },
     {
-      "category": "pizza",
-      "title": "Детская 30см",
-      "categories": "",
-      "name": "children's",
-      "image": "https://wasabi.kg/wp-content/uploads/2023/02/0c34417e-212b-4da3-ab09-463f2cfdbbf8.jpg",
-      "price": "400",
-      "weight": "0",
-      "quantity": "0",
-      "ingridients": "Пицца соус, сосиски говяжьи, кукуруза.",
+      "category": "rolls",
+      "title": "Хот краб",
+      "categories": "Теплые ролы",
+      "name": "hot-crab",
+      "image": "https://wasabi.kg/wp-content/uploads/2021/07/hot-krab.jpg",
+      "price": "430",
+      "weight": "320",
+      "quantity": "8",
+      "ingridients": "Снежный краб, лосось, масаго, сыр",
       "compound": "",
       "id": 75
+    },
+    {
+      "category": "rolls",
+      "title": "Хот Изумруд",
+      "categories": "Теплые ролы",
+      "name": "hot-emerald",
+      "image": "https://wasabi.kg/wp-content/uploads/2022/09/34.png",
+      "price": "200",
+      "weight": "260",
+      "quantity": "8",
+      "ingridients": "",
+      "compound": "",
+      "id": 76
     }
   ]
 }

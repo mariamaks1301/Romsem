@@ -27,6 +27,9 @@ const Footer = () => {
                             <li className="footer__item">
                                 <Link className="footer__link">Политика возврата</Link>
                             </li>
+                            <li className="footer__item">
+                                <Link to='/adminpanel' className="footer__link">Админ Панель</Link>
+                            </li>
                             
                         </ul>
                     </div>
@@ -41,8 +44,6 @@ const Footer = () => {
                             mask={`+\\9\\96(999)99-99-99`}
                             type='tel'
                             />
-                            
-                            
                             <p className='footer__form-text'>
                                 Выберите удобный <br /> 
                             мессенджер для общения

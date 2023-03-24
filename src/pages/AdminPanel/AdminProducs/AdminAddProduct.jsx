@@ -2,23 +2,10 @@ import React, {useState} from 'react';
 import { useAddProductMutation } from '../../../redux';
 import { useForm } from 'react-hook-form';
 
-
 const AdminAddProduct = () => {
 
-    const [newProduct, setNewProduct] = useState('');
-    const [addProduct, {isError}] = useAddProductMutation();
 
-
-    // const [category, setCategory] = useState('');
-    // const [title, setTitle] = useState('');
-    // const [categories, setCategories] = useState('');
-    // const [name, setName] = useState('');
-    // const [image, setImage] = useState('');
-    // const [price, setPrice] = useState(0);
-    // const [weight, setWeight] = useState(0);
-    // const [quantity, setQuantity] = useState(0);
-    // const [ingridients, setIngridients] = useState([]);
-    // const [compound, setCompound] = useState([]);
+    const [addProduct] = useAddProductMutation();
 
     const {
         register,
@@ -50,13 +37,15 @@ const AdminAddProduct = () => {
 
        
         await addProduct(newPoduct).unwrap();
-        setNewProduct('')
+       
       
 
     }
 
     return (
         <div className='addProduct'>
+            
+            
             <form className='addProduct__form form' onSubmit={handleSubmit(handleAddProduct)}>
                 <h2 className='form__title'>Добавление Продукта</h2>
 
