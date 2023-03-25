@@ -1,5 +1,11 @@
 .adminProducts{
     background: transparent;
+
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     &__select{
         width: 100px;
         height: 25px;

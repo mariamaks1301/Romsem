@@ -1,12 +1,18 @@
 import React, {useState} from 'react';
-import { useGetUsersQuery } from '../../../redux';
+import { useGetUsersQuery, useDeleteUserMutation } from '../../../redux';
 
 const AdminUsers = () => {
 
     const [countUsers, setCountUsers] = useState('');
     const {data = [], isLoading} = useGetUsersQuery(countUsers);
-    if(isLoading) return <h1>Loading...</h1>
 
+    const [deleteUser] = useDeleteUserMutation();
+    
+    const handleDeleteUser = async (id) => {
+        await deleteUser(id).unwrap();
+    }
+    
+    if(isLoading) return <h1>Loading...</h1>
     return (
         <div className='users'>
              <div>
@@ -28,10 +34,7 @@ const AdminUsers = () => {
                                 <p className='adminPanel__item-email'>{item.email}</p>
                                 <p className='adminPanel__item-phone'>{item.phone}</p>
                                 <p className='adminPanel__item-address'>{item.address}</p>
-                                <button className='adminPanel__item-delete btn' type='button'> delete</button>
-                                    
-
-                                
+                                <button onClick={()=> handleDeleteUser(item.id)} className='adminPanel__item-delete btn' type='button'>Delete</button>  
                             </li>
                         ))
                     }

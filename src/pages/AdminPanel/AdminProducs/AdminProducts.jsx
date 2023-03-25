@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { useGetProductsQuery, useDeleteProductMutation, useGetProductQuery, useEditProductMutation  } from '../../../redux';
 import AdminAddProduct from './AdminAddProduct';
 import {FaPencilAlt, FaTrashAlt} from 'react-icons/fa';
+import ProductSearch from '../../../Components/ProductSearch/ProductSearch';
 
 
 
@@ -41,6 +42,7 @@ const AdminProducts = () => {
             <AdminAddProduct/>
                  
             <div>
+                <div className='adminProducts__row'>
                 <select className='adminProducts__select' value={countProducts} onChange={(e)=> setCountProducts(e.target.value)}>
                     <option value="''">All</option>
                     <option value="10">10</option>
@@ -54,6 +56,13 @@ const AdminProducts = () => {
                     <option value="90">90</option>
                     <option value="100">100</option>
                 </select>
+
+
+
+                <ProductSearch/>
+
+                </div>
+                
                 
                 <ul className='adminProducts__list'>
                     {

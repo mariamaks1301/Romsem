@@ -1,46 +1,36 @@
-import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { CustomContext } from '../../utils/Context';
-import axios from '../../utils/axios';
+import { useGetUserQuery } from '../../redux';
 
 
 const Login = () => {
 
-    const {setUser} = useContext(CustomContext);
-    const navigate = useNavigate();
+    const [getUser] = useGetUserQuery();
 
     const {
         register,
         handleSubmit,
         getValues,
+        reset,
         formState: { errors },
       } = useForm({
         mode: "onBlur"
       });
 
-      const loginUser = () =>{
-        
-        let newUser = {
-            email: getValues('email'),
-            password: getValues('password'),
-        }
 
-        axios.post('/login', newUser)
-            .then(({data})=>{
-                setUser({
-                    token: data.accessToken,
-                    ...data.user
-                })
-                localStorage.setItem('user', JSON.stringify({
-                    token: data.accessToken,
-                    ...data.user
-                }))
-                navigate('/');
-            })
-            .catch((err)=> console.log(err.message))
-      }
-
+     const loginUser = async ()=> {
+         let user = {
+             email: getValues('email'),
+             password: getValues('password'),
+         }
+         reset();
+         console.log(user)
+         await getUser(user).unwrap();
+     }
+   
+     
+ 
     return (
         <div className='login'>
             <div className="container">

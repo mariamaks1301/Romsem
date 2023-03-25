@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "email": "lana@mail.ru",
-      "password": "Qwerty123",
-      "login": "lana007",
-      "phone": "+996(949)67-49-86",
-      "id": 1
-    },
-    {
       "email": "karina@mail.ru",
       "password": "Karina123",
       "login": "karina123",
@@ -20,6 +13,20 @@
       "login": "igorigor",
       "phone": "+996(389)65-98-36",
       "id": 3
+    },
+    {
+      "email": "rinat@mail.ru",
+      "password": "Rinat12345",
+      "login": "rinat007",
+      "phone": "+996(936)93-67-93",
+      "id": 4
+    },
+    {
+      "email": "ruslan@mail.ru",
+      "password": "Ruslan007",
+      "login": "ruslan123",
+      "phone": "+996(386)58-35-97",
+      "id": 5
     }
   ],
   "menu": [

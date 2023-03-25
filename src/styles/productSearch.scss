@@ -1,0 +1,17 @@
+.product__search{
+    position: relative;
+    &-field{
+        width: 250px;
+        height: 30px;
+        padding: 0 10px;
+        
+    }
+    &-icon{
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        z-index: 100;
+        border-radius: 5px;
+
+    }
+}

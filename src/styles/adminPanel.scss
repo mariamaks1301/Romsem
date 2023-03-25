@@ -1,7 +1,8 @@
 .adminPanel{
     padding: 30px 0;
     background: url(../assets/loging-bg.jpg) center/cover no-repeat;
-    height: 200vh;
+    min-height: 100vh;
+    height: 100%;
     width: 100%;
 
     &__block-switcher{
@@ -22,4 +23,20 @@
 .addProduct{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    &__form-title{
+        margin-bottom: 30px;
+        cursor: pointer;
+        &-row{
+            display: flex;
+            column-gap: 20px;
+            
+        }
+
+    }
+    // &__form{
+    //     max-height: 0;
+    //     overflow: hidden;
+    // }
 }

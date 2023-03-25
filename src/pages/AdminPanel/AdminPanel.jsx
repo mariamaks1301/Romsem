@@ -12,12 +12,16 @@ const AdminPanel = () => {
         <div className='adminPanel'>
             <div className="container">
                 <div className='adminPanel__block-switcher'>
-                    <button onClick={()=> setStatus(true)}  className='adminPanel__switcher btn' type='button'>Users</button>
-                    <button onClick={()=> setStatus(false)} className='adminPanel__switcher btn' type='button'>Products</button>   
+                    <button style={{background: status && '#F46D40'}} onClick={()=> setStatus(true)}  className='adminPanel__switcher btn' type='button'>Users</button>
+                    <button style={{background: !status && '#F46D40'}} onClick={()=> setStatus(false)} className='adminPanel__switcher btn' type='button'>Products</button>   
                 </div>
 
                     {
-                        status ? <AdminUsers/> :  <AdminProducts/>
+                        status && <AdminUsers/> 
+                    }
+
+                    {
+                        !status && <AdminProducts/>
                     }
 
                     

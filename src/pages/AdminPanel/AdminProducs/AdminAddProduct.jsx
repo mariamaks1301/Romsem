@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import { useAddProductMutation } from '../../../redux';
 import { useForm } from 'react-hook-form';
+import {BsCaretDownFill} from 'react-icons/bs';
 
 const AdminAddProduct = () => {
 
-
+    const [showAddProduct, setShowAddProduct] = useState(false);
     const [addProduct] = useAddProductMutation();
 
     const {
@@ -45,9 +46,18 @@ const AdminAddProduct = () => {
     return (
         <div className='addProduct'>
             
+            <div className='addProduct__form-title-row'>
             
-            <form className='addProduct__form form' onSubmit={handleSubmit(handleAddProduct)}>
-                <h2 className='form__title'>Добавление Продукта</h2>
+                <h2 style={{color: showAddProduct ? '#F46D40': 'grey' }} className='addProduct__form-title form__title'>Добавление Продукта</h2>
+                <span onClick={()=> setShowAddProduct(!showAddProduct)} className='addProduct__form-title-icon' style={{paddingTop: '5px'}}>
+                    <BsCaretDownFill style={{fill: showAddProduct ? '#F46D40': 'grey' }}/>
+                </span>
+                
+            </div>
+
+
+            {
+                showAddProduct && <form className='addProduct__form form' onSubmit={handleSubmit(handleAddProduct)}>
 
                 <div className="form__block">
                     <label className='form__label'>
@@ -126,6 +136,8 @@ const AdminAddProduct = () => {
 
                 <button className='form__btn btn' type='submit'>Добавить</button>
             </form>
+            }
+            
             
         </div>
     );

@@ -15,7 +15,7 @@ export const productsApi = createApi({
                 : [{ type: 'Products', id: 'LIST'}],
         }),
         getProduct: build.query({
-            query: id => `/posts/${id}`
+            query: id => `/products/${id}`
         }),
         addProduct: build.mutation({
             query: (body) => ({
@@ -39,7 +39,7 @@ export const productsApi = createApi({
               body: patch,
             }),
             invalidatesTags: [{ type: 'Products', id: 'LIST'}]
-          })
+        }),
     })
 });
 

@@ -1,54 +1,42 @@
-import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link} from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import InputMask from 'react-input-mask';
-import { CustomContext } from '../../utils/Context';
-import axios from '../../utils/axios';
+import { useAddUserMutation } from '../../redux';
 
 
 
 
 const Form = () => {
 
-    const { setUser } = useContext(CustomContext);
-    const navigate = useNavigate();
 
+    const [addUser] = useAddUserMutation();
 
 
     const {
         register,
         handleSubmit,
         getValues,
+        reset,
         formState: { errors },
       } = useForm({
         mode: "onBlur"
       });
-    
-      const registerUser = ()=>{
 
+      const registerUser = async ()=> {
         let newUser = {
             email: getValues('email'),
             password: getValues('password'),
             login: getValues('login'),
             phone: getValues('phone')
         }
+        reset();
+        console.log(newUser)
+        await addUser(newUser).unwrap();
+    
+        }
+    
 
-        axios.post('/users', newUser)
-            .then(({data}) => {
-                setUser({
-                    token: data.accessToken,
-                    ...data.user
-                })
-                 localStorage.setItem('user', JSON.stringify({
-                     token: data.accessToken,
-                     ...data.user
-                 }))
-                navigate('/');
-            })
-            .catch((err) => console.log(err.message))
-
-      }
-   
 
     return (
         <div className='content'>
@@ -69,10 +57,6 @@ const Form = () => {
                     })} className='form__field' type="email" placeholder='Введите Email' />
                     <p className='form__error'>{errors.email && errors.email.message}</p>
                 </label>
-
-                
-
-                
 
                 <label  className='form__label'>
                     <input {...register('login', {
@@ -149,9 +133,7 @@ const Form = () => {
                     <p className='form__error'>{errors.passwordAgain && errors.passwordAgain.message}</p>
                 </label>
 
-
                 <button className='form__btn' type='submit'>Зарегестрироваться</button>
-
 
                 <p className='form__text'>У меня уже есть
                     <Link to="/login" className='form__text-link' > аккаунт</Link>
