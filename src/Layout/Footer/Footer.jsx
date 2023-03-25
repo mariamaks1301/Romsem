@@ -67,7 +67,7 @@ const Footer = () => {
                                     <li className='footer__social-item'>
                                         <a className='footer__social-link' href="">
                                             <p className='footer__social-icon footer__social-icon-instagram'>
-                                                <span><BsInstagram fill='white' fontSize={'25px'} paddingTop={'100%'}/></span>
+                                                <span><BsInstagram fill='white' fontSize={'25px'} paddingtop={'100%'}/></span>
                                             </p>
                                         </a>
                                     </li>

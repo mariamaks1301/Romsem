@@ -6,12 +6,17 @@ import {VscAccount} from 'react-icons/vsc';
 import { Link, useNavigate } from 'react-router-dom';
 import { CustomContext } from '../../utils/Context';
 import BasketZero from '../../Components/BasketZero/BasketZero';
+import { useGetBasketProductsQuery } from '../../redux';
+import { Popover } from '@mui/material';
 
 const Header = () => {
 
     const navigate = useNavigate();
     const {user, setUser, basket, setBasket } = useContext(CustomContext);
     const [show, setShow] = useState(false);
+    const {data=[]} = useGetBasketProductsQuery();
+    
+    const [popover, setPopover] = useState(false);
 
     const logOutUser = ()=>{
         setUser({
@@ -55,17 +60,32 @@ const Header = () => {
                         <Link className='header__right-link-reviews' to={'/reviews'}>Отзывы</Link>
                         <Link className='header__right-link-delivery' to={'/delivery'}>Доставка и оплата</Link>
 
-                        <div className="header__search">
+                        <div className="header__search" onClick={()=> setPopover(!popover)}>
                             <span>
                                 <BsSearch style={{fontSize: '20px'}}/>
                             </span>
+                             {
+                                popover && <Popover  style={{display: 'block'}}
+                                                anchorOrigin={{
+                                                    vertical: 'center',
+                                                    horizontal: 'right',
+                                                }}
+                                                transformOrigin={{
+                                                    vertical: 'center',
+                                                    horizontal: 'right',
+                                                }}
+                                                >
+                                                The content of the Popover.
+                                            </Popover>
+                            } 
+                            
                         </div>
 
                         
 
                         <div onClick={()=> 
                              {
-                                if(basket.length){
+                                if(data.length){
                                   navigate('/basket')
                                 }else{
                                     setShow(true)

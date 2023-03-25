@@ -18,6 +18,46 @@
         align-items: center;
         justify-content: space-between;
     }
+    &__users{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        &-selector{
+            width: 80px;
+            height: 20px;
+            padding: 0 10px;
+        }
+    }
+    &__user-list{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        
+    }
+
+
+    &__user-item{
+        display: flex;
+        align-items: center;
+
+    }
+    &__user{
+        &-id{
+            width: 5%;
+        }
+        &-login{
+            width: 15%;
+        }
+        &-email{
+            width: 30%;
+        }
+        &-phone{
+            width: 30%;
+        }
+        &-delete{
+            width: 20%;
+        }
+    }
 }
 
 .addProduct{
@@ -35,8 +75,4 @@
         }
 
     }
-    // &__form{
-    //     max-height: 0;
-    //     overflow: hidden;
-    // }
 }

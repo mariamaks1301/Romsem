@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "email": "karina@mail.ru",
-      "password": "Karina123",
-      "login": "karina123",
-      "phone": "+996(397)93-76-93",
-      "id": 2
-    },
-    {
       "email": "igor@mail.ru",
       "password": "Qwerty123",
       "login": "igorigor",
@@ -898,5 +891,6 @@
       "compound": "",
       "id": 76
     }
-  ]
+  ],
+  "basket": []
 }

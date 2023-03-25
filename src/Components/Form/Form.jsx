@@ -32,8 +32,7 @@ const Form = () => {
         }
         reset();
         console.log(newUser)
-        await addUser(newUser).unwrap();
-    
+        await addUser(newUser).unwrap();  
         }
     
 
