@@ -6,7 +6,6 @@ import {VscAccount} from 'react-icons/vsc';
 import { Link, useNavigate } from 'react-router-dom';
 import { CustomContext } from '../../utils/Context';
 import BasketZero from '../../Components/BasketZero/BasketZero';
-import { useGetBasketProductsQuery } from '../../redux';
 import { Popover } from '@mui/material';
 
 const Header = () => {
@@ -14,7 +13,7 @@ const Header = () => {
     const navigate = useNavigate();
     const {user, setUser, basket, setBasket } = useContext(CustomContext);
     const [show, setShow] = useState(false);
-    const {data=[]} = useGetBasketProductsQuery();
+  
     
     const [popover, setPopover] = useState(false);
 
@@ -83,16 +82,9 @@ const Header = () => {
 
                         
 
-                        <div onClick={()=> 
-                             {
-                                if(data.length){
-                                  navigate('/basket')
-                                }else{
-                                    setShow(true)
-                                }
-                               
-                             }
-                        } className='header__basket '>
+                       
+                             
+                        <div className='header__basket '>
                             <span className='header__basket-icon'>
                                         <HiShoppingCart style={{fontSize: '32px'}}/>
                                     </span> 

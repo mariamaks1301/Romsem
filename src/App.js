@@ -1,35 +1,26 @@
-import { Route, Routes } from 'react-router-dom';
-import Layout from './Layout/Layout';
-import Home from './pages/Home/Home';
-import Login from './pages/Login/Login';
-import NotFound from './pages/NotFound/NotFound';
-import Register from './pages/Register/Register';
-import Delivery from './pages/Delivery/Delivery';
-import Catalog from './pages/Catalog/Catalog';
-import Product from './pages/Product/Product';
+import { Suspense } from 'react';
+import PrivatRounting from './routing/PrivatRounting';
+import AuthRouting from './routing/AuthRouting';
 import '../src/styles/style.scss';
-import Basket from './pages/Basket/Basket';
-import AdminPanel from './pages/AdminPanel/AdminPanel';
+import { useSelector } from 'react-redux';
+import { userSelector } from './redux/reselect';
+
 
 function App() {
-  return (
-    <div className="App">
-      <Routes>
-        <Route path={''} element={<Layout/>}>
-          <Route path='/' element={<Home/>}/>
-          <Route path="/delivery" element={<Delivery/>}/>
-          <Route path="/catalog" element={<Catalog/>}/>
-          <Route path="/product/:id" element={<Product/>}/>
-          <Route path="/basket" element={<Basket/>}/>
-          <Route path='/*' element={<NotFound/>}/>
-        </Route>
 
-        <Route path='/adminpanel' element={<AdminPanel/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-      </Routes>
+  const {user} = useSelector(userSelector);
+
+  return (
+    <Suspense fallback={'...loading'}>
+        {
+          user.login.length ? 
+                <AuthRouting/>
+                :
+                <PrivatRounting/>
+        }
+      
   
-    </div>
+    </Suspense>
   );
 }
 

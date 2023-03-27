@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useAddProductMutation } from '../../../redux';
+import { useAddProductMutation } from '../../../redux/reducers/productsApi';
 import { useForm } from 'react-hook-form';
 import {BsCaretDownFill} from 'react-icons/bs';
 

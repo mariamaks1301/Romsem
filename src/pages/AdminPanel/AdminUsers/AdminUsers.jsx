@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useGetUsersQuery, useDeleteUserMutation } from '../../../redux';
+import { useGetUsersQuery, useDeleteUserMutation } from '../../../redux/reducers/usersApi';
 
 const AdminUsers = () => {
 

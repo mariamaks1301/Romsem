@@ -1,18 +1,17 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import InputMask from 'react-input-mask';
-import { useAddUserMutation } from '../../redux';
-
-
+import { useDispatch } from 'react-redux';
+import { fillUser } from '../../redux/reducers/user';
+import axios from '../../utils/axios';
 
 
 const Form = () => {
 
-
-    const [addUser] = useAddUserMutation();
-
-
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+  
     const {
         register,
         handleSubmit,
@@ -23,16 +22,20 @@ const Form = () => {
         mode: "onBlur"
       });
 
-      const registerUser = async ()=> {
-        let newUser = {
-            email: getValues('email'),
-            password: getValues('password'),
-            login: getValues('login'),
-            phone: getValues('phone')
-        }
-        reset();
-        console.log(newUser)
-        await addUser(newUser).unwrap();  
+      const registerUser = (data)=> {
+        const {passwordAgain, ...other} = data;
+        let newUser = {...other}
+        console.log(newUser);
+
+        axios.post('/register', {newUser})
+        .then(({ data }) => {
+            dispatch(fillUser(data));
+            reset();
+            navigate('/');
+        })
+        .catch(err => console.log(err))
+        
+       
         }
     
 

@@ -1,22 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAddBasketProductMutation } from '../../redux';
+
 
 const Card = ({item}) => {
     const navigate = useNavigate();
-    const [addBasketProduct] = useAddBasketProductMutation();
 
-    const addProductToBasket = async ()=> {
-        const basketProduct = {
-            title: item.title,
-            image: item.image,
-            weight: item.weight,
-            quantity: item.quantity,
-            price: item.price,
-        }
-        await addBasketProduct(basketProduct).unwrap();
-    }
- 
 
     return (
         <div key={item.id} className="card">
@@ -31,7 +19,7 @@ const Card = ({item}) => {
                 </div>
                 <div className='card__row'>
                     <p className='card__price'>{item.price} Сом</p>
-                    <button className='card__btn' type='button' onClick={()=> addProductToBasket(item.id)}>Хочу</button>
+                    <button className='card__btn' type='button'>Хочу</button>
                 </div>
                 
             </div>   

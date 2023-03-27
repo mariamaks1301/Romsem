@@ -7,9 +7,11 @@
         align-items: center;
     }
     &__select{
-        width: 100px;
-        height: 25px;
+        width: 250px;
+        height: 30px;
+        padding: 0 15px;
         margin-bottom: 10px;
+        @include text(16px, 400, 1.2, $black);
     }
     &__row{
         display: flex;

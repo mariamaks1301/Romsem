@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useGetUserQuery } from '../../redux';
+
 
 
 const Login = () => {
 
-    const [getUser] = useGetUserQuery();
+
 
     const {
         register,
@@ -19,14 +19,13 @@ const Login = () => {
       });
 
 
-     const loginUser = async ()=> {
+     const loginUser = ()=> {
          let user = {
              email: getValues('email'),
              password: getValues('password'),
          }
-         reset();
-         console.log(user)
-         await getUser(user).unwrap();
+         console.log(user);
+         
      }
    
      

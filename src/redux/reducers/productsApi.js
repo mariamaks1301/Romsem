@@ -6,16 +6,13 @@ export const productsApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:8080/'}),
     endpoints: (build) => ({
         getProducts: build.query({
-            query: (limit = '10') => `/products?${limit && `_limit=${limit}`}`,
+            query: (filter) => `/products?${filter.category && `category=${filter.category}&`}${filter.title && `title_like=${filter.title}&`}`,
             providesTags: (result) => result
                 ? [
                     ...result.map(({id}) => ({ type: 'Products', id})),
                     { type: 'Products', id: 'LIST' },
                 ]
                 : [{ type: 'Products', id: 'LIST'}],
-        }),
-        getProduct: build.query({
-            query: id => `/products/${id}`
         }),
         addProduct: build.mutation({
             query: (body) => ({
@@ -33,14 +30,14 @@ export const productsApi = createApi({
             invalidatesTags: [{ type: 'Products', id: 'LIST'}]
         }),
         editProduct: build.mutation({
-            query: ({ id, ...patch }) => ({
+            query: (id, body) => ({
               url: `/products/${id}`,
               method: 'PATCH',
-              body: patch,
+              body,
             }),
             invalidatesTags: [{ type: 'Products', id: 'LIST'}]
         }),
     })
 });
 
-export const { useGetProductsQuery, useAddProductMutation, useDeleteProductMutation, useGetProductQuery, useEditProductMutation  } = productsApi;
+export const { useGetProductsQuery, useAddProductMutation, useDeleteProductMutation, useEditProductMutation } = productsApi;
