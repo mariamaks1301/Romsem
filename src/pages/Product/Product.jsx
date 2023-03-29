@@ -6,32 +6,36 @@ import Recommend from '../../Components/Recommend/Recommend';
 import {HiShoppingCart} from 'react-icons/hi';
 
 
+
 const Product = () => {
+
+
+    
     const [product, setProduct] = useState({});
     const {id} = useParams();
     const navigate = useNavigate();
     const [productCount, setProductCount] = useState(0);
 
 
-    useEffect(()=>{
-        axios(`/products/${id}`)
-        .then(({data})=> setProduct(data))
-        .catch((err)=> console.log(err))
-    }, [id])
+     useEffect(()=>{
+         axios(`/products/${id}`)
+         .then(({data})=> setProduct(data))
+         .catch((err)=> console.log(err))
+     }, [id])
 
-    if(JSON.stringify(product) === '{}'){
-        return (
-            <div className="container">
-                <div onClick={()=> navigate(-1)} className="product__back" >
-                    <span className='product__back-icon'>
-                        <HiOutlineChevronLeft style={{color: '#fff'}}/>
-                    </span>
-                    <span className='product__back-text'>Вернуться назад</span>
-                </div>
-                <h2 className='product__title'>Продукт не найден!</h2>
-            </div>
-        )
-    }
+     if(JSON.stringify(product) === '{}'){
+         return (
+             <div className="container">
+                 <div onClick={()=> navigate(-1)} className="product__back" >
+                     <span className='product__back-icon'>
+                         <HiOutlineChevronLeft style={{color: '#fff'}}/>
+                     </span>
+                     <span className='product__back-text'>Вернуться назад</span>
+                 </div>
+                 <h2 className='product__title'>Продукт не найден!</h2>
+             </div>
+         )
+     }
 
 
 
@@ -40,7 +44,7 @@ const Product = () => {
             <div className="container">
                 <div className="product__row">
                         <div className="product__block-img">
-                            <img className='product__img' src={`${product.image[0] === '.' ? '../' : ''}${product.image}`} alt={product.title} />
+                            <img className='product__img' src={product.image} alt={product.title} />
                         </div>
                         <div className='product__info'>
                             <h2 className='product__title'>{product.title}</h2>

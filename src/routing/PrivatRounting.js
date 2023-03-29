@@ -16,11 +16,11 @@ const PrivatRounting = () => {
                 <Route path='/' element={<Home/>}/>
                 <Route path='/catalog/:category' element={<Catalog/>}/>
                 <Route path='/product/:id' element={<Product/>}/>
-                <Route path="/delivery" element={<Delivery/>}/>
                 <Route path="/basket" element={<Basket/>}/>
                 <Route path='*' element={<NotFound/>}/>
             </Route>
 
+                <Route path="/delivery" element={<Delivery/>}/>
             <Route path='adminpanel' element={<AdminPanel/>}/>
         </Routes>
     );
