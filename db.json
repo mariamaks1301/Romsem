@@ -20,61 +20,89 @@
       "login": "ruslan123",
       "phone": "+996(386)58-35-97",
       "id": 5
+    },
+    {
+      "email": "slava@mail.ru",
+      "login": "slava007",
+      "phone": "+996(396)79-37-96",
+      "password": "Slava123",
+      "id": 7
+    },
+    {
+      "email": "mariabroz@mail.ru",
+      "login": "maria007",
+      "phone": "+996(938)75-98-37",
+      "password": "Mariabroz007",
+      "id": 8
+    },
+    {
+      "email": "ioanna@mail.ru",
+      "login": "ioanna007",
+      "phone": "+996(868)68-68-76",
+      "password": "Qwerty123",
+      "id": 9
+    },
+    {
+      "email": "admin@mail.ru",
+      "login": "admin",
+      "phone": "+996(397)69-37-69",
+      "password": "Admin007",
+      "id": 10
     }
   ],
   "menu": [
     {
       "id": 1,
       "title": "Пицца",
-      "name": "pizza",
+      "categoy": "pizza",
       "image": "https://yan-pizza.ru/wp-content/uploads/2020/08/pochemu-nasha-piczcza-luchshaya.jpg"
     },
     {
       "id": 2,
       "title": "Сеты",
-      "name": "sets",
+      "categoy": "sets",
       "image": "https://wasabi.kg/wp-content/uploads/2021/09/klassika.jpg"
     },
     {
       "id": 3,
       "title": "WOK",
-      "name": "wok",
+      "categoy": "wok",
       "image": "https://wasabi.kg/wp-content/uploads/2021/07/soba-krevetka.jpg"
     },
     {
       "id": 4,
       "title": "Роллы",
-      "name": "rolls",
+      "categoy": "rolls",
       "image": "https://wasabi.kg/wp-content/uploads/2021/07/sjake-tempura.jpg"
     },
     {
       "id": 5,
       "title": "Суши",
-      "name": "sushi",
+      "categoy": "sushi",
       "image": "https://www.nippon.com/ru/ncommon/contents/japan-data/168678/168678.jpg"
     },
     {
       "id": 6,
       "title": "Салаты",
-      "name": "salads",
+      "categoy": "salads",
       "image": "https://img.freepik.com/premium-photo/vegetarian-salad-with-mix-leaves-mangold-swiss-chard-spinach-arugula-and-nuts-in-a-salad-bowl-black-background-top-view-copy-space_89816-27302.jpg"
     },
     {
       "id": 7,
       "title": "Супы",
-      "name": "soup",
+      "categoy": "soup",
       "image": "https://www.maggi.ru/data/images/recept/img564x436/recept_8567_gmag.jpg"
     },
     {
       "id": 8,
       "title": "Закуски",
-      "name": "snacks",
+      "categoy": "snacks",
       "image": "https://wasabi.kg/wp-content/uploads/2021/07/klab-losos.jpg"
     },
     {
       "id": 9,
       "title": "Напитки",
-      "name": "drinks",
+      "categoy": "drinks",
       "image": "https://edaprof.ru/image/catalog/aromatizatori/koka-kola-zhidkiy/aromatizator-pishchevoy-koka-kola-zhidkiy-5.jpg"
     }
   ],
@@ -153,7 +181,8 @@
       "name": "pepperoni-pepper",
       "price": 803,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 2,
@@ -162,7 +191,8 @@
       "name": "cheese",
       "price": 245,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 3,
@@ -171,7 +201,8 @@
       "name": "barbecue-chicken",
       "price": 295,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 4,
@@ -180,7 +211,8 @@
       "name": "Sweet-sour-chicken",
       "price": 275,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 5,
@@ -189,7 +221,8 @@
       "name": "cheeseburger-pizza",
       "price": 415,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 6,
@@ -198,7 +231,8 @@
       "name": "crazy-pepperoni",
       "price": 580,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 7,
@@ -207,7 +241,8 @@
       "name": "pepperoni",
       "price": 675,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 8,
@@ -216,7 +251,8 @@
       "name": "margarita",
       "price": 450,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 9,
@@ -225,7 +261,8 @@
       "name": "",
       "price": 395,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 10,
@@ -234,7 +271,8 @@
       "name": "",
       "price": 285,
       "ingridients": "",
-      "category": "pizza"
+      "category": "pizza",
+      "quantity": 8
     },
     {
       "id": 11,
@@ -245,7 +283,8 @@
       "ingridients": "Креветки в темпуре, масаго, сливочный сыр",
       "categories": "Холодные ролы",
       "weight": 220,
-      "category": "rolls"
+      "category": "rolls",
+      "quantity": 8
     },
     {
       "id": 12,

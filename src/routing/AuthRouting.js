@@ -7,7 +7,6 @@ import NotFound from '../pages/NotFound/NotFound';
 const AuthRouting = () => {
     return (
         <Routes>
-        
             <Route path='register' element={<Register/>}/>
             <Route path='login' element={<Login/>}/>
             <Route path='*' element={<NotFound/>}/>

@@ -24,18 +24,17 @@ const Form = () => {
 
       const registerUser = (data)=> {
         const {passwordAgain, ...other} = data;
-        let newUser = {...other}
-        console.log(newUser);
 
-        axios.post('/register', {newUser})
+        axios.post('/users', {
+            ...other
+        })
         .then(({ data }) => {
             dispatch(fillUser(data));
             reset();
             navigate('/');
         })
         .catch(err => console.log(err))
-        
-       
+
         }
     
 

@@ -1,30 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import axios from '../../utils/axios';
+import { useDispatch } from 'react-redux';
+import { fillUser } from '../../redux/reducers/user';
 
 
 
 const Login = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
 
     const {
         register,
         handleSubmit,
-        getValues,
-        reset,
         formState: { errors },
       } = useForm({
         mode: "onBlur"
       });
 
 
-     const loginUser = ()=> {
-         let user = {
-             email: getValues('email'),
-             password: getValues('password'),
-         }
-         console.log(user);
+     const loginUser = (data)=> {
+        console.log(data);
+
+        axios.post('/login', data)
+        .then(({data}) => {
+            dispatch(fillUser(data))
+            navigate('/')
+            
+        }).catch((err)=> console.log(err.message))
+
+
+     
          
      }
    

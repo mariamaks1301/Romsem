@@ -1,30 +1,30 @@
 const menuData = [
     {
-        en: 'Pizza',
+        en: 'pizza',
         ru: 'Пицца'
     },
     {
-        en: 'Sets',
+        en: 'sets',
         ru: 'Сеты'
     },
     {
-        en:  'WOK',
+        en:  'wok',
         ru:  'WOK'
     },
     {
-        en: 'Rolls',
+        en: 'rolls',
         ru: 'Роллы'
     },
     {
-        en: 'Sushi',
+        en: 'sushi',
         ru: 'Суши'
     },
     {
-        en: 'Salads',
+        en: 'salads',
         ru: 'Салаты'
     },
     {
-        en: 'Soups',
+        en: 'soups',
         ru: 'Супы'
     },
     {
@@ -32,11 +32,11 @@ const menuData = [
         ru: 'Закуски'
     } ,
     {
-        en: 'Drinks',
+        en: 'drinks',
         ru: 'Напитки'
     },
     {
-        en: 'Sales',
+        en: 'sales',
         ru: 'Акции'
     }
     

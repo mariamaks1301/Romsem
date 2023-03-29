@@ -25,7 +25,7 @@ export const getUsers = createAsyncThunk(
 
 const initialState = {
     user: {
-        login : ''
+        email : ''
     }
 }
 
@@ -37,7 +37,7 @@ const userSlice = createSlice({
             state.user = action.payload
         },
         logOutUser : (state, action) => {
-            state.user = {login : ''}
+            state.user = {email : ''}
         },
         deleteUser: (state, action) => {
             state.user = action.payload

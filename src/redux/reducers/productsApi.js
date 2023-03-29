@@ -14,6 +14,9 @@ export const productsApi = createApi({
                 ]
                 : [{ type: 'Products', id: 'LIST'}],
         }),
+        getProduct: build.query({
+            query: id => `/posts/${id}`
+        }),      
         addProduct: build.mutation({
             query: (body) => ({
                 url: 'products', 
@@ -40,4 +43,4 @@ export const productsApi = createApi({
     })
 });
 
-export const { useGetProductsQuery, useAddProductMutation, useDeleteProductMutation, useEditProductMutation } = productsApi;
+export const { useGetProductsQuery, useGetProductQuery, useAddProductMutation, useDeleteProductMutation, useEditProductMutation } = productsApi;

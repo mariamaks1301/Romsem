@@ -3,8 +3,9 @@ import {configureStore, combineReducers} from "@reduxjs/toolkit";
 import storage from 'redux-persist/lib/storage';
 import user from './reducers/user';
 import products from "./reducers/products";
+import basket from "./reducers/basket";
 import {
-    persistStore,
+persistStore,
     persistReducer,
     FLUSH,
     REHYDRATE,
@@ -15,9 +16,12 @@ import {
 import {usersApi} from "./reducers/usersApi";
 import { productsApi } from "./reducers/productsApi";
 
+
 const rootReducer = combineReducers({
-    user,
-    products,
+    user: user,
+    products: products,
+    basket,
+    
 })
 
 const persistConfig = {
@@ -26,7 +30,6 @@ const persistConfig = {
 
 }
 
-
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const store = configureStore({
@@ -34,6 +37,8 @@ const store = configureStore({
         persistedReducer,
         [usersApi.reducerPath] : usersApi.reducer,
         [productsApi.reducerPath] : productsApi.reducer,
+       
+
 
     },
     middleware: (getDefaultMiddleware) =>

@@ -1,4 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
 
 export const userSelector = createSelector( store => store.persistedReducer.user, user => user);
-export const productsSlice = createSelector( store => store.persistedReducer.product, product => product);
+export const productsSelector = createSelector( store => store.persistedReducer.products, products => products);
+export const basketSelector = createSelector( store => store.persistedReducer.basket, basket => basket);

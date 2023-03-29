@@ -23,7 +23,7 @@ const AdminProducts = () => {
                 <div className='adminProducts__row'>
 
                 <select className='adminProducts__select' value={category} onChange={(e)=> setCategory(e.target.value)}>
-                    <option selected value="all">All</option>
+                    <option value="all">All</option>
                     <option value="pizza">Пицца</option>
                     <option value="rolls">Ролы</option>
                     <option value="sushi">Суши</option>
@@ -45,7 +45,7 @@ const AdminProducts = () => {
                     {
                         data.map(item => (
 
-                            <ProductItem item={item}/>
+                            <ProductItem key={item.id} item={item}/>
 
                         ))
                     }

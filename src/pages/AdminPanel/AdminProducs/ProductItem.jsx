@@ -22,7 +22,7 @@ const ProductItem = ({item}) => {
     }
 
     return (
-        <li key={item.id} className='adminProducts__item adminProducts__item-row'>
+        <li className='adminProducts__item adminProducts__item-row'>
             <img className='adminProducts__item-img' src={item.image} alt={item.title} />
                                 
             <div className='adminProducts__item-info'>

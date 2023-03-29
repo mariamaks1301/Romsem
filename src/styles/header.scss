@@ -72,11 +72,7 @@
         }
 
      }
-
-
-
     
-
      &__right{
         display: flex;
         align-items: center;
@@ -91,10 +87,30 @@
         }
      }
      &__basket{
+        border: none;
+        background: transparent;
+        position: relative;
+    
         &-icon{
+            
             svg{
                 fill: $orangelight;
             }
+        }
+        &-count{
+            position: absolute;
+            top: -10px;
+            right: -10px;
+
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid grey;
+            background: $orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
         }
      }
 

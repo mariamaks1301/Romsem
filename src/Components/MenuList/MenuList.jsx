@@ -22,7 +22,7 @@ const MenuList = () => {
                 <ul className='menu__list'>
                     {
                         menu.map((item)=>(
-                            <li key={item.id} className='menu__item' onClick={()=> navigate(`/catalog?category=${item.name}`)}>
+                            <li key={item.id} className='menu__item' onClick={()=> navigate(`/catalog/${item.categoy}`)}>
                                 <img className='menu__item-img' src={item.image} alt={item.title} />
                                 <Link  className='menu__item-link'>{item.title}</Link>
                              </li>

@@ -14,7 +14,7 @@ const PrivatRounting = () => {
         <Routes>
             <Route path='/' element={<Layout/>}>
                 <Route path='/' element={<Home/>}/>
-                <Route path='/catalog' element={<Catalog/>}/>
+                <Route path='/catalog/:category' element={<Catalog/>}/>
                 <Route path='/product/:id' element={<Product/>}/>
                 <Route path="/delivery" element={<Delivery/>}/>
                 <Route path="/basket" element={<Basket/>}/>

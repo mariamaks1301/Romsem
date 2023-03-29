@@ -4,11 +4,17 @@ import InputMask from 'react-input-mask';
 import {BsInstagram} from 'react-icons/bs';
 import {ImWhatsapp} from 'react-icons/im';
 import {FaTelegramPlane} from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import { userSelector } from '../../redux/reselect';
 
 
 
 
 const Footer = () => {
+    const {data}  = useSelector(userSelector);
+    console.log(data)
+
+
     return (
         <footer className='footer'>
             <div className="container">
