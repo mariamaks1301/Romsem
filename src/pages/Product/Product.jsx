@@ -4,26 +4,33 @@ import { useNavigate, useParams } from 'react-router-dom';
 import {HiOutlineChevronLeft} from 'react-icons/hi';
 import Recommend from '../../Components/Recommend/Recommend';
 import {HiShoppingCart} from 'react-icons/hi';
+import { useContext } from 'react';
+import { CustomContext } from '../../utils/Context';
+import {TiPlus, TiMinus} from 'react-icons/ti';
+import { display, style } from '@mui/system';
+
 
 
 
 const Product = () => {
 
+    const { basket, addBasket, plusOneBasket, minusOneBasket, setBasket } = useContext(CustomContext);
+    console.log(basket)
 
-    
-    const [product, setProduct] = useState({});
+
+    const [item, setItem] = useState({});
     const {id} = useParams();
     const navigate = useNavigate();
-    const [productCount, setProductCount] = useState(0);
+    
 
 
      useEffect(()=>{
          axios(`/products/${id}`)
-         .then(({data})=> setProduct(data))
+         .then(({data})=> setItem(data))
          .catch((err)=> console.log(err))
      }, [id])
 
-     if(JSON.stringify(product) === '{}'){
+     if(JSON.stringify(item) === '{}'){
          return (
              <div className="container">
                  <div onClick={()=> navigate(-1)} className="product__back" >
@@ -44,35 +51,52 @@ const Product = () => {
             <div className="container">
                 <div className="product__row">
                         <div className="product__block-img">
-                            <img className='product__img' src={product.image} alt={product.title} />
+                            <img className='product__img' src={item.image} alt={item.title} />
                         </div>
                         <div className='product__info'>
-                            <h2 className='product__title'>{product.title}</h2>
+                            <h2 className='product__title'>{item.title}</h2>
                             <p className="product__weight">
                                 <span>Вес: </span>
-                                <span>{product.weight} грамм</span>
+                                <span>{item.weight} грамм</span>
                             </p>
                             <div className="product__row product__row-basket">
-                                <p className="product__price">{product.price} Сом</p>
-                                <p className="product__btns-count">
-                                    <button className='product__btn-count product__btn-count-decrease' type='button' onClick={()=> setProductCount((prev) => prev - 1)}>-</button>
-                                    <span className='product__count'>{productCount}</span>
-                                    <button className='product__btn-count product__btn-count-increase' type='button' onClick={()=> setProductCount((prev) => prev + 1)}> + </button>
-                                </p>
+                                <p className="product__price">{item.price} Сом</p>
                             </div>
                             <p className="product__description">
                                 <span>Состав: </span>
-                                {product.ingridients}
+                                {item.ingridients}
                             </p>
 
-                            <button type='button' className='product__btn'>
-                                <span>Хочу !</span>
-                                <span>
-                                    <HiShoppingCart fill='white' fontSize={'22px'}/>
-                                </span>
-                            </button>
-                        
-                        
+
+{
+                basket.findIndex(product => product.id === item.id) > -1 
+                ? <div className='card__row product__row'>
+                <button className="basket__item-btn" type="button" onClick={()=>minusOneBasket(item.id)}>
+                    <span>
+                        <TiMinus fill='white' fontSize={'20px'}/>
+                    </span>
+                </button>
+                <h3 className="card__price">{item.price} Сом</h3>
+                <button className="basket__item-btn" type="button" onClick={()=>plusOneBasket(item.id)}>
+                    <span>
+                        <TiPlus fill='white'  fontSize={'20px'}/>
+
+                    </span>
+                </button>
+
+                <div className='product__count '>{
+                    basket.find((product)=>product.id === item.id).count
+                }</div>
+
+            </div>
+                : <div className="card__row product__row">
+                <h3 className="card__price">{item.price} Сом</h3>
+                <button onClick={()=>addBasket(item)} className="card__btn" type="button">
+                    <span>Хочу</span>  
+                </button>
+            </div>
+
+            } 
 
                         </div>
                     </div>

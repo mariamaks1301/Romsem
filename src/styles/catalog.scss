@@ -1,21 +1,28 @@
 .catalog{
     padding: 50px 0;
     background: $bg-col;
+    &__select{
+        height: 40px !important;
+        align-items: center !important;
+        align-content: center;
+    }
     &__content{
         width: 100%;
         display: flex;
+        flex-direction: column;
         column-gap: 20px;
+        &-row{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
-    &__aside{
-       
-        width: 250px;
-        background: grey;
-        min-height: 100vh;
+    &__filter{
+        width: 60%;
         border-radius: 8px;
         padding: 40px 20px 20px 20px;
-
         display: flex;
-        flex-direction: column;
         gap: 20px;
         @include text(16px, 400, 1.2, #fff);
     }
@@ -28,18 +35,20 @@
 
     }
     &__row{
-        width: calc(100% - 270px);
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        column-gap: 13px;
+        row-gap: 20px;
     }
+
     &__title{
         width: 100%;
         margin-bottom: 5px;
     }
 }
 .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
-    color: white !important;
+    color: $black !important;
 }
 
 .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
@@ -47,4 +56,7 @@
 }
 :root {
     --swiper-theme-color: white !important;
+}
+.css-ece9u5 {
+    min-width: 200px !important;
 }

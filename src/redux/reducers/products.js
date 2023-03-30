@@ -6,32 +6,35 @@ export const getAllProducts = createAsyncThunk(
     async (filter, {rejectWithValue})=>{
         try {
 
-            const selectOrder = () =>{
-                switch (filter.order) {
-                    case 'asc': {
-                        return `_sort=price&_order=asc&`
-                    }
-                    case 'desc': {
-                        return `_sort=price&_order=desc&`
-                    }
-                    case 'abc': {
-                        return `_sort=title&_order=asc&`
-                    }
-                    case 'weight': {
-                        return `_sort=weight&_order=asc&`
-                    }
-                    case 'calories': {
-                        return `_sort=calories&_order=asc&`
-                    }
-                    case 'default':{
-                        return ''
-                    }   
-                }
-            }
+             const selectOrder = () =>{
+                 switch (filter.order) {
+                     case 'asc': {
+                         return `_sort=price&_order=asc&`
+                     }
+                     case 'desc': {
+                         return `_sort=price&_order=desc&`
+                     }
+                     case 'abc': {
+                         return `_sort=title&_order=asc&`
+                     }
+                     case 'weight': {
+                         return `_sort=weight&_order=asc&`
+                     }
+                     case 'calories': {
+                         return `_sort=calories&_order=asc&`
+                     }
+                     case 'default':{
+                         return ''
+                     }   
+                 }
+             }
             const order = selectOrder();
+            
             const category = `${filter.category !== 'all' ? `category=${filter.category}&` : '' }`;
 
-            const res = await axios(`/products?${category}${order}`)
+            const ingridient = `${filter.ingridient !== 'all' ? `ingridint=${filter.ingridient}&` : '' }`;
+
+            const res = await axios(`/products?${category}${ingridient}${order}`)
             if(res.statusText !== 'OK'){
                 throw new Error('Произошла ошибка')
             }
@@ -45,10 +48,13 @@ export const getAllProducts = createAsyncThunk(
     }
 )
 
+
+
 const initialState = {
     data: [],
     filter: {
         category: 'all',
+        ingridient: 'all',
         order: '',
         title: '',
     },
@@ -66,7 +72,20 @@ const productsSlice = createSlice({
                 ...state.filter, 
                 category: action.payload,
             }
+        },
+        changeOrder: (state, action) => {
+            state.filter = {
+                ...state.filter,
+                order: action.payload,
+            }
+        },
+        ingridientFilter: (state, action) => {
+            state.filter = {
+                ...state.filter,
+                ingridient: action.payload,
+            }
         }
+        
     },
     extraReducers: {
         [getAllProducts.rejected] : (state, action) => {
@@ -83,5 +102,5 @@ const productsSlice = createSlice({
     }
 })
 
-export const { changeStatus } = productsSlice.actions
+export const { changeStatus, changeOrder, ingridientFilter } = productsSlice.actions
 export default productsSlice.reducer

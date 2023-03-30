@@ -1,9 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import {BsCreditCard2Back, BsWallet2} from 'react-icons/bs';
 
 
 const Delivery = () => {
+    const nagigate = useNavigate();
 
     const {
         register,

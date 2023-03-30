@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import InputMask from 'react-input-mask';
 import {BsInstagram} from 'react-icons/bs';
@@ -6,13 +6,11 @@ import {ImWhatsapp} from 'react-icons/im';
 import {FaTelegramPlane} from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { userSelector } from '../../redux/reselect';
-
-
+import axios from '../../utils/axios';
 
 
 const Footer = () => {
     const {data}  = useSelector(userSelector);
-    console.log(data)
 
 
     return (
@@ -33,9 +31,12 @@ const Footer = () => {
                             <li className="footer__item">
                                 <Link className="footer__link">Политика возврата</Link>
                             </li>
+                            
                             <li className="footer__item">
                                 <Link to='/adminpanel' className="footer__link">Админ Панель</Link>
                             </li>
+                            
+                            
                             
                         </ul>
                     </div>

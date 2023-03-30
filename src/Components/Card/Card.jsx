@@ -1,12 +1,7 @@
-import React, {useEffect, useState, useContext} from 'react';
+import React, { useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addItem } from '../../redux/reducers/basket';
 import { CustomContext } from '../../utils/Context';
 import {TiPlus, TiMinus} from 'react-icons/ti';
-
-
-
-
 
 
 const Card = ({item}) => {
@@ -51,8 +46,7 @@ const Card = ({item}) => {
                 : <div className="card__row">
                 <h3 className="card__price">{item.price} Сом</h3>
                 <button onClick={()=>addBasket(item)} className="card__btn" type="button">
-                    <span>Хочу</span>
-                    
+                    <span>Хочу</span>  
                 </button>
             </div>
 

@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userSelector } from '../../redux/reselect';
 import { logOutUser } from '../../redux/reducers/user';
 import { CustomContext } from '../../utils/Context';
+import {CiDeliveryTruck} from 'react-icons/ci';
+import {MdOutlineRateReview} from 'react-icons/md';
 
 const Header = () => {
 
@@ -17,6 +19,10 @@ const Header = () => {
     const {user} = useSelector(userSelector);
     const dispatch = useDispatch();
     const [show, setShow] = useState(false);
+
+   
+
+
   
 
  
@@ -56,11 +62,14 @@ const Header = () => {
                              </span>
                          </div> 
                          <button className='header__basket' type='button' onClick={()=>{
-                                if(basket.length){
-                                    navigate('/basket')
+                                if(user.email && basket.length){
+                                    navigate('/basket') 
+                                }else if(!user.email){
+                                    navigate('/register')
                                 }else{
                                     setShow(true)
                                 }
+                                
                             }}>
                                 <span className='header__basket-icon'>
                                     <HiShoppingCart style={{fontSize: '40px'}}/>

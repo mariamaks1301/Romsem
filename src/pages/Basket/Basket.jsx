@@ -8,10 +8,12 @@
 
 
  const Basket = () => {
+    const navigate = useNavigate();
     const {basket, plusOneBasket, minusOneBasket, delBasket} = useContext(CustomContext);
-    console.log(basket.length);
 
-
+    if(!basket.length){
+        navigate('/catalog/all')
+    }
 
      return (
          <div className='basket'>
@@ -42,7 +44,7 @@
                                         <TiPlus fill='white' fontSize={'20px'}/>
                                     </button>
                                 </div>
-                                <p className='basket__item-price'>{item.price * item.count} ₽</p>
+                                <p className='basket__item-price'>{item.price * item.count} Cом</p>
                                 <button className='basket__item-btn' type='button' onClick={()=>delBasket(item.id)}>
                                     <span className='basket__item-btn basket__item-btn-delete '>
                                         <span style={{transform: 'rotate(45deg)', marginTop: '3px 3px 0 0 '}}>
@@ -65,9 +67,9 @@
                         <div className='basket__total-info'>
                             <p className='basket__total-price'>Итого:<span> {1000} ₽ </span></p>
                             <p className='basket__total-delivery'>До бесплатной доставки не хватет: <span>{100} ₽</span></p>
-                            <p className='basket__total-delivery'>Минимальная сума заказа 1500 ₽</p>
+                            <p className='basket__total-delivery'>Минимальная сума заказа 500 ₽</p>
                         </div>
-                        <button type='button' className='basket__total-btn'>Оформить заказ</button>
+                        <button onClick={()=> navigate('/delivery')} type='button' className='basket__total-btn'>Оформить заказ</button>
                     </div>
                  </div> 
              </div>

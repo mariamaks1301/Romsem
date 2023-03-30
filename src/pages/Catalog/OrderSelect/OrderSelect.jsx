@@ -5,14 +5,19 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useParams } from 'react-router-dom';
+import { changeOrder } from '../../../redux/reducers/products';
+import { useDispatch } from 'react-redux';
 
 
-function OrderSelect({order, setOrder}) {
+
+function OrderSelect() {
     
-    const {category} = useParams();
+    const dispatch = useDispatch()
+    const {order} = useParams();
+   
   
     const handleChange = (e)=>{
-        setOrder(e.target.value)
+        dispatch(changeOrder(e.target.value));
     }
 
  
@@ -24,17 +29,17 @@ function OrderSelect({order, setOrder}) {
         <Select 
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          className='cotalog__aside-select'
+          className='catalog__select'
           value={order}
-          label="Категория"
+          label="Порядок"
           onChange={handleChange}
         >
             
-            <MenuItem className='cotalog__aside-item'  value={'default'}>По умолчанию</MenuItem>
-            <MenuItem className='cotalog__aside-item'  value={'desc'}>По убыванию</MenuItem>
-            <MenuItem className='cotalog__aside-item'  value={'asc'}>По возрастанию</MenuItem>
-            <MenuItem className='cotalog__aside-item'  value={'abc'}>По алфавиту</MenuItem>
-            <MenuItem className='cotalog__aside-item'  value={'weight'}>По весу</MenuItem>
+            <MenuItem  value={'default'}>По умолчанию</MenuItem>
+            <MenuItem  value={'desc'}>По убыванию</MenuItem>
+            <MenuItem  value={'asc'}>По возрастанию</MenuItem>
+            <MenuItem  value={'abc'}>По алфавиту</MenuItem>
+            <MenuItem  value={'weight'}>По весу</MenuItem>
            
 
             
