@@ -1,26 +1,37 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ingridientFilter } from '../../../redux/reducers/products';
+import store from '../../../redux';
+import { productsSelector } from '../../../redux/reselect';
 
 
 
 
 
-const IngridientSelect = ({ingridient, setIngridient}) => {
+const IngridientSelect = () => {
       
-
+    const {filter} = useSelector(productsSelector)
+    const [ingridient, setIngridint] = useState("all");
+    
     const dispatch = useDispatch();
   
-    const handleChange = (e)=>{
-        dispatch(ingridientFilter(setIngridient(e.target.value)))
+    const handleChange = (event) => {
+        setIngridint(event.target.value)
+        console.log(event.target.value)
     }
+    
+    useEffect(() => {
+        dispatch(ingridientFilter(ingridient))
+    },[ingridient])
+
+
 
   
     return (

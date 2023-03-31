@@ -31,25 +31,10 @@ const Reviews = () => {
     return (
         <div className='reviews'>
             <div className="container">
-                <form className='reviews__form' action="" onSubmit={handleAddReview}>
-                    <label className='reviews__form-label' htmlFor="">
-                        <input value={name} onChange={(e)=> setName(e.target.value)} className='reviews__form-field' type="text" placeholder='Ваше имя' />
-                    </label>
-
-                    <label className='reviews__form-label' htmlFor="">
-                        <input value={date} onChange={(e)=> setDate(e.target.value)} className='reviews__form-field' type="date" placeholder='data' />
-                    </label>
-                    
-                    <label className='reviews__label' htmlFor="">
-                        <textarea value={text} onChange={(e)=> setText(e.target.value)} className='reviews__field' type="text" />
-                    </label>
-                    <button className='reviews__btn btn' type='submit'>Опубликовать</button>
-                </form>
-
                 <div className="reviews__row">
                     {
                         data.map(item => (
-                            <div className='reviews__item'>
+                            <div key={item.id} className='reviews__item'>
                                 <div className='reviews__item-row'>
                                     <p className='reviews__item-name'>{item.name}</p>
                                     <p className='reviews__item-date'>{item.date}</p>  
@@ -60,10 +45,22 @@ const Reviews = () => {
                             </div>
                         ))
                     }
-                    
-                    
-
                 </div>
+                <form className='reviews__form' action="" onSubmit={handleAddReview}>
+                    <div className="reviews__form-row">
+                        <label className='reviews__form-label' htmlFor="">
+                            <input value={name} onChange={(e)=> setName(e.target.value)} className='reviews__form-field reviews__form-field-short' type="text" placeholder='Ваше имя' />
+                        </label>
+                        <label className='reviews__form-label' htmlFor="">
+                            <input value={date} onChange={(e)=> setDate(e.target.value)} className='reviews__form-field reviews__form-field-short' type="date" placeholder='data' />
+                        </label>
+                    </div>
+                    
+                    <label className='reviews__label' htmlFor="">
+                        <textarea value={text} onChange={(e)=> setText(e.target.value)} className='reviews__form-field reviews__form-field-textarea' type="text" />
+                    </label>
+                    <button className='reviews__form-btn btn' type='submit'>Добавить отзыв</button>
+                </form>
             </div>
         </div>
     );

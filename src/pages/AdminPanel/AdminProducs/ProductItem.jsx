@@ -12,8 +12,15 @@ const ProductItem = ({item}) => {
     const [compound, setCoumpound] = useState('');
     const [editProduct] = useEditProductMutation();
 
-    const handleEditProduct = async (id, { title, price, ingridints, compound }) => {
-        await editProduct(id, {title, price, ingridints, compound }).unwrap(); 
+
+    const handleEditProduct = async ( {id, ...item}) => { 
+          item = { ...item,
+             title,
+             price,
+             ingridints,
+             compound
+         }
+        await editProduct({id: item.id, body: item}).unwrap(); 
    }
 
    const [deleteProduct] = useDeleteProductMutation();
@@ -72,7 +79,8 @@ const ProductItem = ({item}) => {
 
             <div className="adminProducts__btns">
                 {
-                    active ? <button className='adminProducts__item-btn btn' onClick={()=>{
+                    active ? <button className='adminProducts__item-btn btn' 
+                    onClick={()=>{
                         handleEditProduct(item.id)
                         setActive(!active)
                     }}><FaPencilAlt style={{fill: 'white', fontSize: '18px'}}/></button>

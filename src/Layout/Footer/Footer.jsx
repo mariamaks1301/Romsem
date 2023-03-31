@@ -10,7 +10,7 @@ import axios from '../../utils/axios';
 
 
 const Footer = () => {
-    const {data}  = useSelector(userSelector);
+ 
 
 
     return (

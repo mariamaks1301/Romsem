@@ -32,9 +32,9 @@ export const getAllProducts = createAsyncThunk(
             
             const category = `${filter.category !== 'all' ? `category=${filter.category}&` : '' }`;
 
-            const ingridient = `${filter.ingridient !== 'all' ? `ingridint=${filter.ingridient}&` : '' }`;
+            const ingridient = `${filter.ingridient !== 'all' ? `ingridient=${filter.ingridient}&` : '' }`;
 
-            const res = await axios(`/products?${category}${ingridient}${order}`)
+            const res = await axios(`/products?${category}${ingridient}`)
             if(res.statusText !== 'OK'){
                 throw new Error('Произошла ошибка')
             }
