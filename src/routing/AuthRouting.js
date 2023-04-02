@@ -19,6 +19,7 @@ const AuthRouting = () => {
             <Route path={''} element={<Layout/>}>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/catalog/:category/:ingridient' element={<Catalog/>}/>
+                <Route path='/catalog/:ingridient' element={<Catalog/>}/>
                 <Route path='/product/:id' element={<Product/>}/>
                 <Route path='/reviews' element={<Reviews/>}/>
                 <Route path='*' element={<NotFound/>}/>

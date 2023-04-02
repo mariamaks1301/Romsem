@@ -1,32 +1,40 @@
 import React, {useState} from 'react';
 import {FaPencilAlt, FaTrashAlt} from 'react-icons/fa';
-import { useDeleteProductMutation,  useEditProductMutation  } from '../../../redux/reducers/productsApi';
+import { useDeleteProductMutation, useGetProductQuery} from '../../../redux/reducers/productsApi';
+import { useDispatch } from 'react-redux';
+import { getAllProducts } from '../../../redux/reducers/products';
+import { useSelector } from 'react-redux';
+import { productsSelector } from '../../../redux/reselect';
+import axios from 'axios';
+
+
 
 
 const ProductItem = ({item}) => {
 
+    const dispatch = useDispatch();
+
+    const { data, filter }  = useSelector(productsSelector);
+
+
     const [active, setActive] = useState(false);
     const [title, setTitle] = useState('');
-    const [price, setPrice] = useState('');
-    const [ingridints, setIngridints] = useState('');
-    const [compound, setCoumpound] = useState('');
-    const [editProduct] = useEditProductMutation();
+    const [price, setPrice] = useState(0);
+   
+    
 
-
-    const handleEditProduct = async ( {id, ...item}) => { 
-          item = { ...item,
-             title,
-             price,
-             ingridints,
-             compound
-         }
-        await editProduct({id: item.id, body: item}).unwrap(); 
-   }
-
-   const [deleteProduct] = useDeleteProductMutation();
+    const [deleteProduct] = useDeleteProductMutation();
     const handleDeleteProduct = async (id) => {
-        await deleteProduct(id).unwrap();
+         await deleteProduct(id).unwrap();
     }
+
+    const changeProduct = (id)=>{   
+        axios.patch(`http://localhost:8080/products/${id}`, {
+          title,
+          price,
+        }).then((res)=> dispatch(getAllProducts(data, filter)))
+
+      }
 
     return (
         <li className='adminProducts__item adminProducts__item-row'>
@@ -55,16 +63,15 @@ const ProductItem = ({item}) => {
                     </p>
 
                     {
-                    active ? <input className='adminProducts__item-ingridints adminProducts__item-ingridints-field' type="text" value={ingridints} onChange={(e)=>
-                        setIngridints(e.target.value)
-                    } placeholder='Введите ингридиенты ч/з запятую'/>
+                    active ? <input className='adminProducts__item-ingridints adminProducts__item-ingridints-field' type="text" 
+                     placeholder='Введите ингридиенты ч/з запятую'/>
                     : <p className='adminProducts__item-ingridints'>
                         {item.ingridints && `Ингридиенты: ${item.ingridints}`}
                         </p>
                 }
                 
                 {
-                    active ? <input className='adminProducts__item-compound adminProducts__item-compound-field' type="text" value={compound} onChange={(e)=>setCoumpound(e.target.value)} placeholder='Состав сета ч/з запятую'/>
+                    active ? <input className='adminProducts__item-compound adminProducts__item-compound-field' type="text" placeholder='Состав сета ч/з запятую'/>
                     : <p className='adminProducts__item-ingridints'>
                         {item.compound && `Состав сета: ${item.compound}`}
                         </p>
@@ -79,9 +86,8 @@ const ProductItem = ({item}) => {
 
             <div className="adminProducts__btns">
                 {
-                    active ? <button className='adminProducts__item-btn btn' 
-                    onClick={()=>{
-                        handleEditProduct(item.id)
+                    active ? <button className='adminProducts__item-btn btn' onClick={()=>{
+                        changeProduct(item.id)
                         setActive(!active)
                     }}><FaPencilAlt style={{fill: 'white', fontSize: '18px'}}/></button>
                     : <button onClick={()=> setActive(!active)} className='adminProducts__item-btn btn' type='button'>

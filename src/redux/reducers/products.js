@@ -29,12 +29,14 @@ export const getAllProducts = createAsyncThunk(
                  }
              }
             const order = selectOrder();
+
+            let titleFilter = `${filter.title.length !== 0 ? 'title_like=' + filter.title + '&' : ''}`
             
             const category = `${filter.category !== 'all' ? `category=${filter.category}&` : '' }`;
 
             const ingridient = `${filter.ingridient !== 'all' ? `ingridient=${filter.ingridient}&` : '' }`;
 
-            const res = await axios(`/products?${category}${ingridient}`)
+            const res = await axios(`/products?${category}${ingridient}${order}${titleFilter}`)
             if(res.statusText !== 'OK'){
                 throw new Error('Произошла ошибка')
             }
@@ -48,6 +50,20 @@ export const getAllProducts = createAsyncThunk(
     }
 )
 
+
+  export const changeProduct = createAsyncThunk(
+    "users/changeProduct",
+    async (id, { rejectWithValue }) => {
+      try {
+        const res = await axios.put(`/products/${id}`, {});
+        return res.data;
+      } catch (err) {
+        console.log(err);
+        return rejectWithValue(err.message);
+      }
+    }
+  );
+  
 
 
 const initialState = {
@@ -84,6 +100,12 @@ const productsSlice = createSlice({
                 ...state.filter,
                 ingridient: action.payload,
             }
+        },
+        titleFilter: (state, action) => {
+            state.filter = {
+                ...state.filter,
+                titleFilter: action.payload,
+            }
         }
         
     },
@@ -102,5 +124,5 @@ const productsSlice = createSlice({
     }
 })
 
-export const { changeStatus, changeOrder, ingridientFilter } = productsSlice.actions
+export const { changeStatus, changeOrder, ingridientFilter, titleFilter } = productsSlice.actions
 export default productsSlice.reducer

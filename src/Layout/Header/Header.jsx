@@ -56,11 +56,11 @@ const Header = () => {
                      <div className='header__right'>
                          <Link className='header__right-link-reviews' to={'/reviews'}>Отзывы</Link>
                          <Link className='header__right-link-delivery' to={'/delivery'}>Доставка и оплата</Link>
-                         <div className="header__search" >
+                         {/* <div className="header__search" >
                              <span>
                                  <BsSearch style={{fontSize: '20px'}}/>
                              </span>
-                         </div> 
+                         </div>  */}
                          <button className='header__basket' type='button' onClick={()=>{
                                 if(user.email && basket.length){
                                     navigate('/basket') 

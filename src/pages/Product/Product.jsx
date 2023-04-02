@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import { CustomContext } from '../../utils/Context';
 import {TiPlus, TiMinus} from 'react-icons/ti';
 import { display, style } from '@mui/system';
+import MenuList from '../../Components/MenuList/MenuList';
 
 
 
@@ -15,7 +16,6 @@ import { display, style } from '@mui/system';
 const Product = () => {
 
     const { basket, addBasket, plusOneBasket, minusOneBasket, setBasket } = useContext(CustomContext);
-    console.log(basket)
 
 
     const [item, setItem] = useState({});
@@ -49,6 +49,7 @@ const Product = () => {
     return (
         <div className='product'>
             <div className="container">
+                <MenuList/>
                 <div className="product__row">
                         <div className="product__block-img">
                             <img className='product__img' src={item.image} alt={item.title} />

@@ -3,10 +3,24 @@
     min-height: 100vh;
     width: 100%;
     &__path{
-        margin-top: 30px;
+        padding-top: 30px;
         display: flex;
         column-gap: 50px;
         align-items: center;
+        &-btn{
+            padding: 0 20px;
+            height: 35px;
+            background: $orangelight;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: .3s all linear;
+            @include text(18px, 500, 1.2, #fff);
+
+                &:hover{
+                    background: $orange;
+                }
+        }
     }
     &__content{
         display: flex;
@@ -26,12 +40,13 @@
           
         }
         &-btns{
-            width: 100%;
-            display: flex;
+            width: 100% !important;
+            display: flex !important;
         }
         &-btn{
-            width: 50%;
-            height: 40px;
+            width: 50% !important;
+            height: 40px !important;
+            width: 180px !important;
             background: $orangelight;
             cursor: pointer;
             border: none;
@@ -104,6 +119,12 @@
             &-street{
                 width: 260px;
             }
+            &-plus{
+                cursor: pointer;
+            }
+            &-minus{
+                cursor: pointer;
+            }
         }
         &-btn-submit{
             margin-top: 20px;
@@ -149,5 +170,18 @@
             }
         }
     }
+
+}
+
+
+.css-ueukts-MuiButtonBase-root-MuiToggleButton-root.Mui-selected {
+    color: white !important;
+    background-color: $orangelight !important;
+    padding: 0 20px !important;
+
+    span{
+        fill: white !important;
+    }
+
 
 }

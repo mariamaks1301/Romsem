@@ -21,6 +21,7 @@ const AdminAddProduct = () => {
     const handleAddProduct = async ()=> {
         const newPoduct = {
             category: getValues('category'),
+            category: getValues('ingridient'),
             title: getValues('title'),
             categories: getValues('categories'),
             name: getValues('name'),
@@ -65,14 +66,14 @@ const AdminAddProduct = () => {
                                 required: true,
                             })}>
                             <option disabled value="">Выберите категорию</option>
-                            <option value="pizza">pizza</option>
-                            <option value="rolls">rolls</option>
-                            <option value="sushi">sushi</option>
-                            <option value="sets">sets</option>
-                            <option value="soup">soup</option>
-                            <option value="wok">wok</option>
-                            <option value="salads">salads</option>
-                            <option value="drinks">drinks</option>
+                            <option value="pizza">Пицца</option>
+                            <option value="rolls">Ролы</option>
+                            <option value="sushi">Суши</option>
+                            <option value="sets">Сеты</option>
+                            <option value="soup">Супы</option>
+                            <option value="wok">WOK</option>
+                            <option value="salads">Салаты</option>
+                            <option value="drinks">Напитки</option>
                         </select>
                     </label>
                     <label className='form__label'>
@@ -84,6 +85,24 @@ const AdminAddProduct = () => {
                         </select>
                     </label>
                 </div>
+
+                <label className='form__label'>
+                         <select className='form__select' {...register('ingridient', {
+                                required: true,
+                            })}>
+                            <option disabled value="">Выберите категорию</option>
+                            <option value="salmon">С лососем</option>
+                            <option value="chicken">С курица</option>
+                            <option value="eel">С Угрем</option>
+                            <option value="cheese">С сыром</option>
+                            <option value="shrimp">С креветками</option>
+                            <option value="beef">С говядиной</option>
+                            <option value="crab">С крабом</option>
+                            <option value="caviar">С икрой</option>
+                            <option value="mushrooms">С грибами</option>
+                            <option value="pepperoni">С пеперони</option>
+                        </select>
+                    </label>
 
 
 
@@ -123,6 +142,8 @@ const AdminAddProduct = () => {
                         <input {...register('quantity')} defaultValue={0} className='form__field' type="number" />
                     </label>
                 </div>
+
+                
 
                 <label className='form__label'>
                     <input {...register('ingridients')} className='form__field' placeholder='Введите основные ингридикнты ч/з запятую'  type="text"  />

@@ -1,5 +1,19 @@
 .footer{
     border-top: 1px solid $grey;
+    position: relative;
+    &__btn-up{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: $orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 5%;
+        left: 2%;
+
+    }
     &__row{   
         margin-top: 20px;
         display: flex;

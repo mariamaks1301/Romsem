@@ -1,27 +1,6 @@
 {
   "users": [
     {
-      "email": "igor@mail.ru",
-      "password": "Qwerty123",
-      "login": "igorigor",
-      "phone": "+996(389)65-98-36",
-      "id": 3
-    },
-    {
-      "email": "rinat@mail.ru",
-      "password": "Rinat12345",
-      "login": "rinat007",
-      "phone": "+996(936)93-67-93",
-      "id": 4
-    },
-    {
-      "email": "ruslan@mail.ru",
-      "password": "Ruslan007",
-      "login": "ruslan123",
-      "phone": "+996(386)58-35-97",
-      "id": 5
-    },
-    {
       "email": "slava@mail.ru",
       "login": "slava007",
       "phone": "+996(396)79-37-96",
@@ -29,25 +8,11 @@
       "id": 7
     },
     {
-      "email": "mariabroz@mail.ru",
-      "login": "maria007",
-      "phone": "+996(938)75-98-37",
-      "password": "Mariabroz007",
-      "id": 8
-    },
-    {
       "email": "ioanna@mail.ru",
       "login": "ioanna007",
       "phone": "+996(868)68-68-76",
       "password": "Qwerty123",
       "id": 9
-    },
-    {
-      "email": "admin@mail.ru",
-      "login": "admin",
-      "phone": "+996(397)69-37-69",
-      "password": "Admin007",
-      "id": 10
     },
     {
       "email": "tanya@mail.ru",
@@ -62,6 +27,18 @@
       "phone": "+996(398)76-93-79",
       "password": "Tahir007",
       "id": 12
+    },
+    {
+      "email": "lana@mail.ru",
+      "login": "lana007",
+      "phone": "+996(489)76-94-76",
+      "password": "Qwerty123",
+      "id": 13
+    },
+    {
+      "email": "lana@mail.ru",
+      "password": "Qwert123",
+      "id": 14
     }
   ],
   "menu": [
@@ -75,19 +52,19 @@
       "id": 2,
       "title": "Сеты",
       "category": "sets",
-      "image": "https://wasabi.kg/wp-content/uploads/2021/09/klassika.jpg"
+      "image": "https://img.freepik.com/premium-photo/sushi-set-philadelphia-roll-california-unagi-black-dragon-with-fresh-ingredients_135427-6549.jpg"
     },
     {
       "id": 3,
       "title": "WOK",
       "category": "wok",
-      "image": "https://wasabi.kg/wp-content/uploads/2021/07/soba-krevetka.jpg"
+      "image": "https://thumbs.dreamstime.com/b/freeze-motion-wok-pan-flying-ingredients-air-freeze-motion-wok-pan-flying-ingredients-air-fire-250085945.jpg"
     },
     {
       "id": 4,
       "title": "Роллы",
       "category": "rolls",
-      "image": "https://wasabi.kg/wp-content/uploads/2021/07/sjake-tempura.jpg"
+      "image": "https://californiaavocado.com/wp-content/uploads/2020/07/California-Roll.jpeg"
     },
     {
       "id": 5,
@@ -99,7 +76,7 @@
       "id": 6,
       "title": "Салаты",
       "category": "salads",
-      "image": "https://img.freepik.com/premium-photo/vegetarian-salad-with-mix-leaves-mangold-swiss-chard-spinach-arugula-and-nuts-in-a-salad-bowl-black-background-top-view-copy-space_89816-27302.jpg"
+      "image": "https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Winter-Noodle-Salad-with-Miso-Dressing-square-FS-300x300.jpg"
     },
     {
       "id": 7,
@@ -111,7 +88,7 @@
       "id": 8,
       "title": "Закуски",
       "category": "snacks",
-      "image": "https://wasabi.kg/wp-content/uploads/2021/07/klab-losos.jpg"
+      "image": "https://content3.jdmagicbox.com/comp/vellore/n1/9999px416.x416.180521122520.v2n1/catalogue/sandwich-square-katpadi-vellore-fast-food-wxirg.jpg"
     },
     {
       "id": 9,
@@ -189,33 +166,11 @@
   ],
   "products": [
     {
-      "id": 1,
-      "image": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "title": "Пепперони Фреш с перцем",
-      "name": "pepperoni-pepper",
-      "price": 803,
-      "ingridients": "",
-      "ingridient": "pepperoni",
-      "category": "pizza",
-      "quantity": 8
-    },
-    {
-      "id": 2,
-      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
-      "title": "Сырная",
-      "name": "cheese",
-      "price": 245,
-      "ingridients": "",
-      "ingridient": "cheese",
-      "category": "pizza",
-      "quantity": 8
-    },
-    {
       "id": 3,
       "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
-      "title": "Цыпленок барбекю",
+      "title": "Барбекю",
       "name": "barbecue-chicken",
-      "price": 295,
+      "price": "780",
       "ingridients": "",
       "ingridient": "chicken",
       "category": "pizza",
@@ -224,9 +179,9 @@
     {
       "id": 4,
       "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
-      "title": "Кисло-сладкий цыпленок",
+      "title": "",
       "name": "Sweet-sour-chicken",
-      "price": 275,
+      "price": 0,
       "ingridients": "",
       "ingridient": "chicken",
       "category": "pizza",
@@ -235,9 +190,9 @@
     {
       "id": 5,
       "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
-      "title": "Чизбургер-пицца",
+      "title": "",
       "name": "cheeseburger-pizza",
-      "price": 415,
+      "price": "520",
       "ingridients": "",
       "ingridient": "beef",
       "category": "pizza",
@@ -889,10 +844,10 @@
     },
     {
       "id": 63,
-      "title": "Кола 1л",
+      "title": "",
       "name": "",
       "image": "https://wasabi.kg/wp-content/uploads/2022/03/2265411_1630155383.518_original.jpg",
-      "price": 100,
+      "price": "80",
       "category": "drinks"
     },
     {
@@ -1019,19 +974,6 @@
       "ingridient": "crab",
       "compound": "",
       "id": 75
-    },
-    {
-      "category": "rolls",
-      "title": "Хот Изумруд",
-      "categories": "Теплые ролы",
-      "name": "hot-emerald",
-      "image": "https://wasabi.kg/wp-content/uploads/2022/09/34.png",
-      "price": "200",
-      "weight": "260",
-      "quantity": "8",
-      "ingridients": "",
-      "compound": "",
-      "id": 76
     }
   ],
   "reviews": [
@@ -1052,6 +994,12 @@
       "date": "2022-12-24",
       "text": "Заказываем у Вас больше 2 -ух лет, были разные ситуации, но сервис стал лучше, суши вкуснее. За доставку сегодня на время, огромное спасибо, точь-в-точь в минута в минуту. Успехов Вам и приятных бонусов нам )",
       "id": 3
+    },
+    {
+      "name": "fkshjgkjhkgskhj",
+      "date": "2023-03-31",
+      "text": "slkhjlskhlkslnbls",
+      "id": 4
     }
   ]
 }

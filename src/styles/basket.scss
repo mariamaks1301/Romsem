@@ -20,10 +20,11 @@
         margin-bottom: 10px;
         border: 1px solid grey;
         &-left{
-            width: 30%;
+            width: 50%;
             padding: 10px;
-
             display: flex;
+            align-items: center;
+            column-gap: 30px;
         }
         &-img{
             max-width: 150px;

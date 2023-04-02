@@ -12,7 +12,6 @@ const Login = () => {
     const navigate = useNavigate();
 
 
-
     const {
         register,
         handleSubmit,
@@ -25,7 +24,7 @@ const Login = () => {
      const loginUser = (data)=> {
         console.log(data);
 
-        axios.post('/login', data)
+        axios.post('/users', data)
         .then(({data}) => {
             dispatch(fillUser(data))
             navigate('/')

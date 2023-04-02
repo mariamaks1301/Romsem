@@ -12,11 +12,12 @@ import IngridientSelect from './IngridientSelect/IngridientSelect';
 
 
 
+
 const Catalog = () => {
    
-
+    const [category, setCategory] = useState('all');
     const [ingridient, setIngridint] = useState('all');
-    const {category} = useParams();
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -38,12 +39,13 @@ const Catalog = () => {
                 <div className="catalog__content">
                     <div className="catalog__content-row">
                         <h2 className='cotalog__crumbs catalog__title'>
-                            <Link className='catalog__crumbs-link ' to='/'>Главная</Link> / {category}
+                            <Link style={{cursor: 'pointer'}} className='catalog__crumbs-link ' to='/'>Главная</Link> / Каталог
                         </h2>
                         <div className="catalog__filter">
-                            <CategorySelect/>
+                            <CategorySelect category={category} setCategory={setCategory}/>
                             <OrderSelect/>
                             <IngridientSelect ingridient={ingridient} setIngridint={setIngridint}/>
+                          
 
                         </div>
                         

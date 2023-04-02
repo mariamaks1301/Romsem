@@ -7,6 +7,7 @@ import {FaTelegramPlane} from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { userSelector } from '../../redux/reselect';
 import axios from '../../utils/axios';
+import {IoIosArrowUp} from 'react-icons/io';
 
 
 const Footer = () => {
@@ -15,6 +16,9 @@ const Footer = () => {
 
     return (
         <footer className='footer'>
+            <a href='#' className='footer__btn-up'>
+                <IoIosArrowUp/>
+            </a>
             <div className="container">
                 <div className="footer__row">
                     <div className="footer__column">

@@ -33,11 +33,7 @@ const AdminProducts = () => {
                     <option value="salads">Салаты</option>
                     <option value="drinks">Напитки</option>
                 </select>
-
-
-
-                <ProductSearch/>
-
+                
                 </div>
                 
                 

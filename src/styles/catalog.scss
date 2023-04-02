@@ -5,7 +5,9 @@
         height: 40px !important;
         align-items: center !important;
         align-content: center;
+        color: black;
     }
+    
     &__content{
         width: 100%;
         display: flex;
@@ -51,12 +53,16 @@
     color: $black !important;
 }
 
-.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
-    color: white;
-}
-:root {
-    --swiper-theme-color: white !important;
-}
+// .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+//     color: white;
+// }
+// :root {
+//     --swiper-theme-color: white;
+// }
 .css-ece9u5 {
     min-width: 200px !important;
+}
+
+#demo-simple-select{
+    color: black;
 }

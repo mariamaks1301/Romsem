@@ -24,7 +24,7 @@ const IngridientSelect = () => {
   
     const handleChange = (event) => {
         setIngridint(event.target.value)
-        console.log(event.target.value)
+
     }
     
     useEffect(() => {
@@ -50,7 +50,6 @@ const IngridientSelect = () => {
                 <MenuItem value="all">Все</MenuItem> 
                 <MenuItem value="salmon">С лососем</MenuItem>
                 <MenuItem value="chicken">С курица</MenuItem>
-                <MenuItem value="soup">С говядиной</MenuItem>
                 <MenuItem value="eel">С Угрем</MenuItem>
                 <MenuItem value="cheese">С сыром</MenuItem>
                 <MenuItem value="shrimp">С креветками</MenuItem>
