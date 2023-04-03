@@ -7,7 +7,7 @@
         align-content: center;
         color: black;
     }
-    
+
     &__content{
         width: 100%;
         display: flex;
@@ -16,6 +16,7 @@
         &-row{
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
         }
@@ -65,4 +66,20 @@
 
 #demo-simple-select{
     color: black;
+}
+
+@media (max-width: 700px){
+    .catalog{
+        padding: 20px 0;
+    }
+    .catalog__filter{
+        column-gap: 20px;
+        display: flex;
+        padding: 20px 0;
+      
+    }
+    .css-ece9u5 {
+        min-width: 150px !important;
+        max-width: 150px !important;
+    }
 }

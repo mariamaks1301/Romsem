@@ -17,7 +17,7 @@ const Footer = () => {
     return (
         <footer className='footer'>
             <a href='#' className='footer__btn-up'>
-                <IoIosArrowUp/>
+                <IoIosArrowUp  fill='white'/>
             </a>
             <div className="container">
                 <div className="footer__row">
@@ -27,10 +27,10 @@ const Footer = () => {
                                 <Link className="footer__link">О компании</Link>
                             </li>
                             <li className="footer__item">
-                                <Link className="footer__link">Доставка и оплата</Link>
+                                <Link to={'/delivery'} className="footer__link">Доставка и оплата</Link>
                             </li>
                             <li className="footer__item">
-                                <Link className="footer__link">Лента материалов</Link>
+                                <Link to={'/reviews'} className="footer__link">Отзывы</Link>
                             </li>
                             <li className="footer__item">
                                 <Link className="footer__link">Политика возврата</Link>

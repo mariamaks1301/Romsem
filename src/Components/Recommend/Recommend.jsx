@@ -45,7 +45,11 @@ const Recommend = () => {
                                         <div className="recommend__card-info">
                                                 <h3 className="recommend__card-title">{item.title}</h3>
                                             <div className="recommend__card-row">
-                                                <p className="recommend__card-weight">Вес: {item.weight} г</p>
+
+                                                {
+                                                    item.weight && <p className="recommend__card-weight">Вес: {item.weight} г</p> 
+                                                }
+                                                
                                                 <p className="recommend__card-weight">Цена: {item.price} Сом</p>
 
                                             </div>

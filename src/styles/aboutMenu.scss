@@ -1,10 +1,11 @@
 .aboutMenu{
-    margin-top: 100px;
+    margin-top: 30px;
     &__row{
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
         margin-bottom: 20px;
+        justify-content: center;
         
     }
     &__block{
@@ -15,6 +16,7 @@
     &__card{
         width: calc(50% - 10px);
         position: relative;
+        cursor: pointer;
         &-map{
             width: calc(25% - 20px);
             height: 240px;
@@ -37,4 +39,54 @@
 
         }
     }
+}
+
+@media (max-width: 1200px){
+    .aboutMenu__row{
+        justify-content: center;
+    }
+    .aboutMenu__card-img{
+        height: 240px;
+    }
+    .aboutMenu__card-map{
+        width: calc(33% - 13px);
+    }
+  }
+
+@media (max-width: 992px){
+    .aboutMenu__card-map{
+        height: 205px;
+    }
+    .aboutMenu__card-img{
+        height: 205px;
+        &-map{
+            height: 205px;
+        }
+    }
+    .aboutMenu__card-title{
+        bottom: 10%;
+    }  
+}
+@media (max-width: 767px){
+    .aboutMenu__card-map{
+        width: calc(50% - 10px);
+        height: 205px;
+    }
+    .aboutMenu__card-title{
+        bottom: 10%;
+    } 
+    .aboutMenu__card-pizza{
+        width: 100%;
+    }    
+}
+@media (max-width: 460px){
+    .aboutMenu__card-img{
+        height: 190px;
+        &-map{
+            height: 190px;
+        }
+    }
+    .aboutMenu__card-title{
+        bottom: 13%;
+    }  
 }

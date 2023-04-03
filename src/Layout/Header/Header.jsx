@@ -9,8 +9,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userSelector } from '../../redux/reselect';
 import { logOutUser } from '../../redux/reducers/user';
 import { CustomContext } from '../../utils/Context';
-import {CiDeliveryTruck} from 'react-icons/ci';
-import {MdOutlineRateReview} from 'react-icons/md';
+import {MdOutlineRateReview, MdDeliveryDining} from 'react-icons/md';
+import {GiHamburgerMenu} from 'react-icons/gi';
+import MenuList from '../../Components/MenuList/MenuList';
+
 
 const Header = () => {
 
@@ -53,14 +55,20 @@ const Header = () => {
                              <span className='header__location-city'>Бишкек</span>
                          </div>
                      </div>
-                     <div className='header__right'>
-                         <Link className='header__right-link-reviews' to={'/reviews'}>Отзывы</Link>
-                         <Link className='header__right-link-delivery' to={'/delivery'}>Доставка и оплата</Link>
-                         {/* <div className="header__search" >
-                             <span>
-                                 <BsSearch style={{fontSize: '20px'}}/>
-                             </span>
-                         </div>  */}
+
+                      <div className='header__right'>
+                         <Link className='header__right-link-reviews' to={'/reviews'}>
+                            <span className='header__reviews-icon'>
+                                <MdOutlineRateReview fill='white' fontSize={'22px'}/>
+                            </span>
+                            <span className='header__reviews-text'>Отзывы</span>
+                         </Link>
+                         <Link className='header__right-link-delivery' to={'/delivery'}>
+                            <span className='header__delivery-icon'>
+                                <MdDeliveryDining enableBackground='white' fill='white' fontSize={'22px'}/>
+                            </span>
+                            <span className='header__delivery-text'>Доставка и оплата</span>
+                        </Link>
                          <button className='header__basket' type='button' onClick={()=>{
                                 if(user.email && basket.length){
                                     navigate('/basket') 

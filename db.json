@@ -39,6 +39,13 @@
       "email": "lana@mail.ru",
       "password": "Qwert123",
       "id": 14
+    },
+    {
+      "email": "mariamaks@gmail.com",
+      "login": "maria007",
+      "phone": "+996(687)63-86-58",
+      "password": "Qwerty123",
+      "id": 15
     }
   ],
   "menu": [

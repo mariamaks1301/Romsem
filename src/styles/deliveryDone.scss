@@ -1,0 +1,20 @@
+.deliveryDone{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $black url(../assets/delivery-done.jpg) center/cover no-repeat;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title{
+        @include text(34px, 600, 1.2, #fff);
+        margin-bottom: 20px;
+    }
+    &__text{
+        @include text(28px, 500, 1.2, #fff);
+    }
+}

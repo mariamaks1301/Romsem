@@ -5,6 +5,7 @@ import TogleBtnCash from './TogleBtnCash';
 import TogleBtnCourier from './TogleBtnCourier';
 import TogleBtnNow from './TogleBtnNow';
 import { useNavigate } from 'react-router';
+import DeliveryDone from '../../Components/DeliveryDone/DeliveryDone';
 // import sendEmail from '../../utils/sendEmail';
 
 
@@ -16,6 +17,8 @@ import { useNavigate } from 'react-router';
 
 const Delivery = () => {
     const navigate = useNavigate();
+
+    const [done, setDone] = useState(false);
     const [count, setCount] = useState(2);
 
     const {
@@ -192,9 +195,14 @@ const Delivery = () => {
                             </label>
                         </div>
                     </div>
-                    <button className='delivery__form-btn-submit' type='submit'>Оформить заказ</button>                
+                    <button onClick={()=> setDone(true)} className='delivery__form-btn-submit' type='submit'>Оформить заказ</button>                
                 </form> 
             </div>
+            
+            
+             <DeliveryDone done={done}/>
+            
+            
         </div>
     );
 };

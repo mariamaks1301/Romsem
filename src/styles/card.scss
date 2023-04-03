@@ -79,3 +79,46 @@
         }
     }
 }
+
+@media(max-width: 992px){
+    .catelog__row{
+        column-gap: 10px;
+    }
+    .card{
+        width: calc(33% - 12px);
+    }
+    .card__block-img{
+        height: 200px;
+    }
+    .card__img{
+        height: 100%;
+    }
+    .card__desc{
+        column-gap: 5px;
+    }
+    .card__weight{
+        @include text(12px, 500, 1.1, $grey);
+    }
+    .card__quantity{
+        @include text(12px, 500, 1.1, $grey);
+    }
+    .card__title{
+        @include text(20px, 500, 1.1, $black);
+
+    }
+    .card__btn{
+        width: 100px;
+    }
+}
+
+@media (max-width: 700px){
+    .catalog__row{
+        column-gap: 30px;
+        justify-content: space-around;   
+    }
+    .card{
+        width: calc(50% - 15px);
+        max-width: 270px;
+    }
+
+}

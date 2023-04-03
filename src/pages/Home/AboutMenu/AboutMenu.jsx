@@ -33,11 +33,11 @@ const AboutMenu = () => {
                         </div>
                     ))
                 }
-                <div className='aboutMenu__card' onClick={()=> navigate(`/catalog/chicken`)}>
-                    <div>
-                        <img className='aboutMenu__card-img' src={Chicken} alt="" />
-                        <h2 className='aboutMenu__card-title'>Чикен</h2>
-                    </div>
+               
+
+                <div className='aboutMenu__card' onClick={()=> navigate(`/catalog/sales/all`)}>
+                            <img className='aboutMenu__card-img aboutMenu__card-img-map' src={Sales} alt="" />
+                            <h2 className='aboutMenu__card-title'>Акции</h2>
                 </div> 
 
                 <div className='aboutMenu__card aboutMenu__card-map'>
@@ -45,15 +45,23 @@ const AboutMenu = () => {
                     <h2 className='aboutMenu__card-title'>С угрем</h2> 
                 </div>
 
-                <div className='aboutMenu__card' onClick={()=> navigate(`/catalog/pizza/all`)}>
-                        <img className='aboutMenu__card-img' src={Pizza} alt="" />
+                <div className='aboutMenu__card' onClick={()=> navigate(`/catalog/chicken`)}>
+                    <div>
+                        <img className='aboutMenu__card-img' src={Chicken} alt="" />
+                        <h2 className='aboutMenu__card-title'>Чикен</h2>
+                    </div>
+                </div> 
+
+                <div className='aboutMenu__card aboutMenu__card-pizza' onClick={()=> navigate(`/catalog/pizza/all`)}>
+                        <img className='aboutMenu__card-img aboutMenu__card-img-pizza' src={Pizza} alt="" />
                         <h2 className='aboutMenu__card-title'>Пицца</h2>
                 </div>
 
-                <div className='aboutMenu__card' onClick={()=> navigate(`/catalog/sales/all`)}>
-                            <img className='aboutMenu__card-img' src={Sales} alt="" />
-                            <h2 className='aboutMenu__card-title'>Акции</h2>
-                </div>  
+               
+
+               
+
+                
 
 
                   

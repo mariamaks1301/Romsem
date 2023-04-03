@@ -17,8 +17,9 @@ const Home = () => {
             
             <MenuList/>
 
-            <div className="container">
+
                 <div className="home__content">
+                <div className="container">
                     <div className="home__swiper">
                         
                         <>
@@ -48,12 +49,21 @@ const Home = () => {
                         </>
 
                     </div>
-                    <AboutMenu/>
+
+
+                   
+                        <AboutMenu/>
+                    </div>
+
                     <Recommend/>
-                    <Info/>
+
+                    <div className="container">
+                        <Info/>
+                    </div>
+
                 </div>
                 
-            </div>
+  
 
             
         </section>

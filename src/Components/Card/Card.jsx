@@ -17,8 +17,16 @@ const Card = ({item}) => {
             <div className='card__block-info'>
                 <h3 className='card__title'>{item.title}</h3>
                 <div className='card__desc'>
-                    <p className='card__weight'>Вес: {item.weight}гр</p>
-                    <p className='card__quantity'>Кол кусочков: {item.quantity}</p>
+
+                    {
+                        item.weight && <p className='card__weight'>Вес: {item.weight}гр</p>
+                    }
+                    
+
+                    {
+                        item.quantity && <p className='card__quantity'>Кол кусочков: {item.quantity}</p>
+                    }
+                    
                 </div>        
             </div>  
             

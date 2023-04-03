@@ -65,11 +65,26 @@
 
                     <div className='basket__total'>
                         <div className='basket__total-info'>
-                            <p className='basket__total-price'>Итого:<span> {1000} ₽ </span></p>
-                            <p className='basket__total-delivery'>До бесплатной доставки не хватет: <span>{100} ₽</span></p>
+                            <p className='basket__total-price'>Итого : <span> 
+                                {
+                                    basket.map(item => {
+                                        return item.price
+                                    }).reduce((acc, rec)=>{
+                                        return acc+= rec
+                                    }, 0)
+                                }
+                                </span>
+                                <span>
+                                        Cом
+                                </span>
+                                </p>
+                            
                             <p className='basket__total-delivery'>Минимальная сума заказа 500 ₽</p>
                         </div>
-                        <button onClick={()=> navigate('/delivery')} type='button' className='basket__total-btn'>Оформить заказ</button>
+                        <div className='basket__total-center'>
+                            <button onClick={()=> navigate('/delivery')} type='button' className='basket__total-btn'>Оформить заказ</button>
+    
+                        </div>
                     </div>
                  </div> 
              </div>
