@@ -22,12 +22,13 @@ const AuthRouting = () => {
                 <Route path='/catalog/:ingridient' element={<Catalog/>}/>
                 <Route path='/product/:id' element={<Product/>}/>
                 <Route path='/reviews' element={<Reviews/>}/>
-                <Route path='*' element={<NotFound/>}/>
                 <Route path="/basket" element={<Basket/>}/>
             </Route> 
+                <Route path='*' element={<NotFound/>}/>
                 <Route path='/register' element={<Register/>}/>
                 <Route path='/login' element={<Login/>}/>
                 <Route path="/delivery" element={<Delivery/>}/>
+                <Route path="/delivery/done" element={<Delivery/>}/>
                 <Route path='/adminpanel' element={<AdminPanel/>}/>
         </Routes>
     );

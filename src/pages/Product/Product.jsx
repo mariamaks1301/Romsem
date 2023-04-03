@@ -49,7 +49,7 @@ const Product = () => {
     return (
         <div className='product'>
             <div className="container">
-                <MenuList/>
+                 <MenuList/> 
                 <div className="product__row">
                         <div className="product__block-img">
                             <img className='product__img' src={item.image} alt={item.title} />

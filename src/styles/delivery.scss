@@ -31,6 +31,7 @@
     &__title{
         @include text(24px, 600, 1.2, $black);
         margin-bottom: 30px;
+        text-align: center;
     }
     &__form{
         max-width: 760px;
@@ -142,10 +143,12 @@
         display: flex;
         flex-wrap: wrap;
         column-gap: 40px;
+        justify-content: center;
     }
     &__left{
         width: calc(50% - 20px);
-        max-width: 360px;
+        width: 360px;
+        margin-bottom: 20px;
         &-row{
             display: flex;
             column-gap: 20px;
@@ -163,6 +166,7 @@
     &
     &__right{
         width: calc(50% - 20px);
+        width: 360px;
         &-row{
             display: flex;
             column-gap: 20px;
@@ -185,4 +189,18 @@
     }
 
 
+}
+
+@media (max-width: 760px) {
+    .delivery__form-btn-center{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .delivery__form-btn-submit{
+        width: 250px;
+    }
+
+    
 }

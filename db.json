@@ -36,16 +36,25 @@
       "id": 13
     },
     {
-      "email": "lana@mail.ru",
-      "password": "Qwert123",
-      "id": 14
-    },
-    {
       "email": "mariamaks@gmail.com",
       "login": "maria007",
       "phone": "+996(687)63-86-58",
       "password": "Qwerty123",
       "id": 15
+    },
+    {
+      "email": "itrun@mail.ru",
+      "login": "lana007",
+      "phone": "+996(456)78-90-09",
+      "password": "Bq12345678",
+      "id": 16
+    },
+    {
+      "email": "amir@mail.ru",
+      "login": "amir007",
+      "phone": "+996(398)76-98-37",
+      "password": "Qwerty123",
+      "id": 17
     }
   ],
   "menu": [
@@ -186,9 +195,9 @@
     {
       "id": 4,
       "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
-      "title": "",
+      "title": "Chili",
       "name": "Sweet-sour-chicken",
-      "price": 0,
+      "price": "720",
       "ingridients": "",
       "ingridient": "chicken",
       "category": "pizza",
@@ -197,9 +206,9 @@
     {
       "id": 5,
       "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
-      "title": "",
+      "title": "Домашняя",
       "name": "cheeseburger-pizza",
-      "price": "520",
+      "price": "650",
       "ingridients": "",
       "ingridient": "beef",
       "category": "pizza",
@@ -1001,12 +1010,6 @@
       "date": "2022-12-24",
       "text": "Заказываем у Вас больше 2 -ух лет, были разные ситуации, но сервис стал лучше, суши вкуснее. За доставку сегодня на время, огромное спасибо, точь-в-точь в минута в минуту. Успехов Вам и приятных бонусов нам )",
       "id": 3
-    },
-    {
-      "name": "fkshjgkjhkgskhj",
-      "date": "2023-03-31",
-      "text": "slkhjlskhlkslnbls",
-      "id": 4
     }
   ]
 }

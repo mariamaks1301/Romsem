@@ -1,8 +1,8 @@
 import React from 'react';
 
-const DeliveryDone = ({done}) => {
+const DeliveryDone = () => {
     return (
-        <div className='deliveryDone' style={{display: done ? 'flex' : 'none'}}>
+        <div className='deliveryDone'>
             <div className="container">
                 <h2 className='deliveryDone__title'>Ваш заказ успешно оформлен</h2>
                 <p className='deliveryDone__text'>

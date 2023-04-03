@@ -57,6 +57,7 @@
              border-radius: 4px;
              background: $orangelight;
              transition: .3s all linear;
+             cursor: pointer;
              &:hover{
                  background: $orange;
              }
@@ -104,11 +105,13 @@
             }
 
         }
-        
-
-        
-        
 
     }
     
+}
+
+@media (max-width: 992px){
+    .basket__item-count{
+        width: 30%;
+    }
 }

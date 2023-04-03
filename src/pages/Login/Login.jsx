@@ -24,7 +24,7 @@ const Login = () => {
      const loginUser = (data)=> {
         console.log(data);
 
-        axios.post('/users', data)
+        axios.post('/login', data)
         .then(({data}) => {
             dispatch(fillUser(data))
             navigate('/')

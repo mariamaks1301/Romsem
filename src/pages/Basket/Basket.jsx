@@ -70,7 +70,7 @@
                                     basket.map(item => {
                                         return item.price
                                     }).reduce((acc, rec)=>{
-                                        return acc+= rec
+                                        return acc+= +rec
                                     }, 0)
                                 }
                                 </span>
@@ -79,7 +79,7 @@
                                 </span>
                                 </p>
                             
-                            <p className='basket__total-delivery'>Минимальная сума заказа 500 ₽</p>
+                            <p className='basket__total-delivery'>Минимальная сума заказа 500 Сом</p>
                         </div>
                         <div className='basket__total-center'>
                             <button onClick={()=> navigate('/delivery')} type='button' className='basket__total-btn'>Оформить заказ</button>

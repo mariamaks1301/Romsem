@@ -5,8 +5,8 @@ import TogleBtnCash from './TogleBtnCash';
 import TogleBtnCourier from './TogleBtnCourier';
 import TogleBtnNow from './TogleBtnNow';
 import { useNavigate } from 'react-router';
-import DeliveryDone from '../../Components/DeliveryDone/DeliveryDone';
-// import sendEmail from '../../utils/sendEmail';
+import DeliveryDone from '../DeliveryDone/DeliveryDone';
+import sendEmail from '../../utils/sendEmail';
 
 
 
@@ -17,8 +17,6 @@ import DeliveryDone from '../../Components/DeliveryDone/DeliveryDone';
 
 const Delivery = () => {
     const navigate = useNavigate();
-
-    const [done, setDone] = useState(false);
     const [count, setCount] = useState(2);
 
     const {
@@ -31,22 +29,22 @@ const Delivery = () => {
         mode: "onBlur"
       });
 
-    //   const handleSubmitToEmail = (e) => {
-    //     e.preventDefault();
-    //     const subject = `New Order from ${getValues('name'), getValues('phone')}`;
-    //     const text = `Email: ${getValues('email')}
-    //     \nAddress: ${getValues('street'), getValues('house'), getValues('apartment') }
-    //     \nEntrance: ${getValues('entrance')}
-    //     \nFloor: ${getValues('floor')}
-    //     \Code: ${getValues('code')}
-    //     \nAddress: ${getValues('address')}
-    //     \nChange: ${getValues('change')}
-    //     \nMessage: ${getValues('coment')}`;
-    //     sendEmail('mariamaks1301@gmail.com', subject, text);
+        const handleSubmitToEmail = () => {
+          const subject = `New Order from ${getValues('name'), getValues('phone')}`;
+          const text = `Email: ${getValues('email')}
+          \nAddress: ${getValues('street'), getValues('house'), getValues('apartment') }
+          \nEntrance: ${getValues('entrance')}
+          \nFloor: ${getValues('floor')}
+          \Code: ${getValues('code')}
+          \nAddress: ${getValues('address')}
+          \nChange: ${getValues('change')}
+          \nMessage: ${getValues('coment')}`;
+          sendEmail('mariamaks1301@gmail.com', subject, text);
+          console.log(subject);
+          console.log(text);
 
-    //     console.log(subject);
-    //     console.log(text);
-    //   };
+          navigate('/delivery/done');
+        };
 
 
 
@@ -60,7 +58,7 @@ const Delivery = () => {
                 </div>
             </div>
             <div className="delivery__content">
-                <form className='delivery__form' onSubmit={handleSubmit}>
+                <form className='delivery__form' onSubmit={handleSubmit(handleSubmitToEmail)}>
                     <h2 className="delivery__title">Ваши данные</h2>
                     <div className='delivery__row'>
                         <div className='delivery__left'>
@@ -86,10 +84,10 @@ const Delivery = () => {
                                 </label>
                                 <label className='delivery__form-label' htmlFor="">
                                     <input {...register('name', {
-                                        required: {
-                                            value: true,
-                                            message: 'Это поле обязательное',
-                                        },
+                                         required: {
+                                             value: true,
+                                             message: 'Это поле обязательное',
+                                         },
                                         maxLength: {
                                             message: 'Максимальная длина 15 символов',
                                             value: 15,
@@ -148,14 +146,6 @@ const Delivery = () => {
                                             value: true,
                                             message: 'Это поле обязательное',
                                         },
-                                        maxLength: {
-                                            message: 'Максимальная длина 20 символов',
-                                            value: 20,
-                                        },
-                                        minLength: {
-                                            message: 'Минимальная длина 6 символа',
-                                            value: 6,
-                                        },
                                     })} className='delivery__form-field delivery__form-field-short' type="number"  placeholder='Дом'/> 
 
                                 </label>
@@ -195,12 +185,15 @@ const Delivery = () => {
                             </label>
                         </div>
                     </div>
-                    <button onClick={()=> setDone(true)} className='delivery__form-btn-submit' type='submit'>Оформить заказ</button>                
+                    <div className="delivery__form-btn-center">
+                        <button className='delivery__form-btn-submit' type='submit'>Оформить заказ</button>
+    
+                    </div>
                 </form> 
             </div>
             
             
-             <DeliveryDone done={done}/>
+             
             
             
         </div>
