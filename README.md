@@ -1,4 +1,3 @@
-https://mariamaks1301.github.io/Romsem/public/index.html
 
 
 # Getting Started with Create React App
