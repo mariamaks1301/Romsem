@@ -101,6 +101,7 @@ const AdminAddProduct = () => {
                             <option value="caviar">С икрой</option>
                             <option value="mushrooms">С грибами</option>
                             <option value="pepperoni">С пеперони</option>
+                            <option value="drinks">Напитки</option>
                         </select>
                     </label>
 

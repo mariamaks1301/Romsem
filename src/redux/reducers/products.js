@@ -30,13 +30,17 @@ export const getAllProducts = createAsyncThunk(
              }
             const order = selectOrder();
 
+            
+
             let titleFilter = `${filter.title.length !== 0 ? 'title_like=' + filter.title + '&' : ''}`
             
             const category = `${filter.category !== 'all' ? `category=${filter.category}&` : '' }`;
 
             const ingridient = `${filter.ingridient !== 'all' ? `ingridient=${filter.ingridient}&` : '' }`;
 
-            const res = await axios(`/products?${category}${ingridient}${order}${titleFilter}`)
+            const changeStatus = category;
+
+            const res = await axios(`/products?${changeStatus}${category}${ingridient}${order}${titleFilter}`)
             if(res.statusText !== 'OK'){
                 throw new Error('Произошла ошибка')
             }
@@ -55,10 +59,9 @@ export const getAllProducts = createAsyncThunk(
     "users/changeProduct",
     async (id, { rejectWithValue }) => {
       try {
-        const res = await axios.put(`/products/${id}`, {});
+        const res = await axios.patch(`/products/${id}`, {});
         return res.data;
       } catch (err) {
-        console.log(err);
         return rejectWithValue(err.message);
       }
     }
@@ -73,6 +76,7 @@ const initialState = {
         ingridient: 'all',
         order: '',
         title: '',
+        changeStatus: 'all'
     },
     error: '',
     status: ''
@@ -109,18 +113,19 @@ const productsSlice = createSlice({
         }
         
     },
-    extraReducers: {
-        [getAllProducts.rejected] : (state, action) => {
-            state.error = action.payload
-            state.status = 'error'
-        },
-        [getAllProducts.pending] : (state, action) => {
-            state.status = 'loading'
-        },
-        [getAllProducts.fulfilled] : (state, action) => {
-            state.status = 'done'
-            state.data = action.payload
-        }
+    extraReducers: (builder) => {
+        builder
+            .addCase(getAllProducts.rejected, (state, action)=>{
+                state.error = action.payload
+                state.status = 'error'
+            })
+            .addCase(getAllProducts.pending, (state, action)=>{
+                state.status = 'loading'
+            })
+            .addCase(getAllProducts.fulfilled, (state, action)=> {
+                state.status = 'done'
+                state.data = action.payload
+            })
     }
 })
 

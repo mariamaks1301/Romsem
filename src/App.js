@@ -11,14 +11,8 @@ function App() {
 
   return (
     <Suspense fallback={'...loading'}>
-        
-        
                 <AuthRouting/>
-                
                 <PrivatRounting/>
-        
-      
-  
     </Suspense>
   );
 }

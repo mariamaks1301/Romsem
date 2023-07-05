@@ -31,6 +31,10 @@ const Catalog = () => {
             dispatch(getAllProducts(filter));
     }, [filter])
 
+    useEffect(()=>{
+        dispatch(getAllProducts(changeStatus));
+    }, [changeStatus])
+
 
 
     return (

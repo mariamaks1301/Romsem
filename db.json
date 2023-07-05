@@ -1,27 +1,6 @@
 {
   "users": [
     {
-      "email": "slava@mail.ru",
-      "login": "slava007",
-      "phone": "+996(396)79-37-96",
-      "password": "Slava123",
-      "id": 7
-    },
-    {
-      "email": "ioanna@mail.ru",
-      "login": "ioanna007",
-      "phone": "+996(868)68-68-76",
-      "password": "Qwerty123",
-      "id": 9
-    },
-    {
-      "email": "tanya@mail.ru",
-      "login": "tanya007",
-      "phone": "+996(936)93-75-98",
-      "password": "Tanya007",
-      "id": 11
-    },
-    {
       "email": "tahir@mail.ru",
       "login": "tahir007",
       "phone": "+996(398)76-93-79",
@@ -55,6 +34,13 @@
       "phone": "+996(398)76-98-37",
       "password": "Qwerty123",
       "id": 17
+    },
+    {
+      "email": "maksat@mail.ru",
+      "login": "maksat007",
+      "phone": "+996(555)63-79-56",
+      "password": "Qwerty123",
+      "id": 18
     }
   ],
   "menu": [
@@ -182,34 +168,12 @@
   ],
   "products": [
     {
-      "id": 3,
-      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
-      "title": "Барбекю",
-      "name": "barbecue-chicken",
-      "price": "780",
-      "ingridients": "",
-      "ingridient": "chicken",
-      "category": "pizza",
-      "quantity": 8
-    },
-    {
-      "id": 4,
-      "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
-      "title": "Chili",
-      "name": "Sweet-sour-chicken",
-      "price": "720",
-      "ingridients": "",
-      "ingridient": "chicken",
-      "category": "pizza",
-      "quantity": 8
-    },
-    {
       "id": 5,
       "image": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
       "title": "Домашняя",
       "name": "cheeseburger-pizza",
       "price": "650",
-      "ingridients": "",
+      "ingridients": [],
       "ingridient": "beef",
       "category": "pizza",
       "quantity": 8
@@ -990,6 +954,45 @@
       "ingridient": "crab",
       "compound": "",
       "id": 75
+    },
+    {
+      "category": "salmon",
+      "title": "lkzblkzblzhjl",
+      "categories": "",
+      "name": "ljkgkahgkh",
+      "image": "https://whatson.ae/wp-content/uploads/2016/08/img-world-of-adventures-17.jpg",
+      "price": "02323",
+      "weight": "024",
+      "quantity": "7",
+      "ingridients": "aldfhjglahlalh",
+      "compound": "",
+      "id": 76
+    },
+    {
+      "category": "chicken",
+      "title": "pizza",
+      "categories": "",
+      "name": "pizza",
+      "image": "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQcHbxCjB7FY6Rttw1VZFdh0gIZmm4MLLjfmD0dhA11saxBKG_D49VVkmlvz3sE71-b",
+      "price": "123",
+      "weight": "800",
+      "quantity": "8",
+      "ingridients": "aljglajlgjaljg",
+      "compound": "",
+      "id": 77
+    },
+    {
+      "category": "salmon",
+      "title": "сок",
+      "categories": "",
+      "name": "juice",
+      "image": "https://www.ferra.ru/thumb/1200x0/filters:quality(75):no_upscale()/imgs/2021/03/25/04/4577020/3b0bcaf6df8d93d37b63bd0c66f1ff750acd6cf9.jpg",
+      "price": "94",
+      "weight": "0",
+      "quantity": "0",
+      "ingridients": "",
+      "compound": "",
+      "id": 78
     }
   ],
   "reviews": [
@@ -1010,6 +1013,12 @@
       "date": "2022-12-24",
       "text": "Заказываем у Вас больше 2 -ух лет, были разные ситуации, но сервис стал лучше, суши вкуснее. За доставку сегодня на время, огромное спасибо, точь-в-точь в минута в минуту. Успехов Вам и приятных бонусов нам )",
       "id": 3
+    },
+    {
+      "name": "флдорпдлфрпдрфд",
+      "date": "2023-04-03",
+      "text": "фдлпдфрпдрфдрпдфрпдал",
+      "id": 4
     }
   ]
 }

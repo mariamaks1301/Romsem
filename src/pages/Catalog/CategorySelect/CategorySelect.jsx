@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -7,6 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useDispatch } from 'react-redux';
 import { changeStatus } from '../../../redux/reducers/products';
+import { useParams } from 'react-router-dom';
 
 
 
@@ -15,11 +16,13 @@ import { changeStatus } from '../../../redux/reducers/products';
 
 const CategorySelect = () => {
     
-    const [ category, setCategory] = useState('');
+    // const [ category, setCategory] = useState('');
+    const {category} = useParams();
     const dispatch = useDispatch();
   
     const handleChange = (e)=>{
         dispatch(changeStatus(`${e.target.value}`))
+        
     }
 
   
@@ -36,17 +39,17 @@ const CategorySelect = () => {
                 onChange={handleChange}
                 >
                 
-                <MenuItem selected onChange={(e)=> setCategory(e.target.value)} value="all">Все категории</MenuItem>   
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="pizza">Пицца</MenuItem>
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="rolls">Ролы</MenuItem>
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="sushi">Суши</MenuItem>
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="sets">Сеты</MenuItem>
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="soup">Супы</MenuItem>
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="wok">WOK</MenuItem>
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="snacks">Закуски</MenuItem>
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="salads">Салаты</MenuItem>
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="drinks">Напитки</MenuItem>
-                <MenuItem onChange={(e)=> setCategory(e.target.value)}  value="salads">Салаты</MenuItem>
+                <MenuItem selected value="all">Все категории</MenuItem>   
+                <MenuItem  value="pizza">Пицца</MenuItem>
+                <MenuItem  value="rolls">Ролы</MenuItem>
+                <MenuItem  value="sushi">Суши</MenuItem>
+                <MenuItem  value="sets">Сеты</MenuItem>
+                <MenuItem  value="soup">Супы</MenuItem>
+                <MenuItem  value="wok">WOK</MenuItem>
+                <MenuItem  value="snacks">Закуски</MenuItem>
+                <MenuItem  value="salads">Салаты</MenuItem>
+                <MenuItem  value="drinks">Напитки</MenuItem>
+                <MenuItem  value="salads">Салаты</MenuItem>
             </Select>
         </FormControl>
     </Box>
